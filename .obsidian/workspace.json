@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Resources/Communities.md",
                 "mode": "preview",
                 "source": false
               }
@@ -64,13 +64,20 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "eaa05bdb902ac90f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "43f2b1dd61471c59",
@@ -86,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Resources/Communities.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +110,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Resources/Communities.md"
               }
             }
           }
@@ -122,37 +129,38 @@
       "canvas:Create new canvas": false,
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e6c1f0bfd59e7b9d",
+  "active": "45c4f1d872e58605",
   "lastOpenFiles": [
+    "Resources/Cybersecurity Notes.md",
+    "Exam/Independent Machine 1/Exam Machine 1 Index.md",
+    "Exam/Independent Machine 1/00 - Overview.md",
+    "Labs&Machines/Network Scans.md",
+    "Labs&Machines/Live Hosts.md",
+    "Labs&Machines/Labs Index.md",
+    "Labs&Machines/Lab Loot.md",
+    "README.md",
     "Exam/Exam Index.md",
     "Exam/AD Set/AD Set Domain Index.md",
-    "README.md",
-    "Labs/Lessons Learned.md",
+    "Labs&Machines/Lessons Learned.md",
     "Resources/Tools.md",
     "Resources/Report Templates.md",
     "Resources/Exam Tips.md",
     "Resources/Exam Details.md",
-    "Resources/Cybersecurity Notes.md",
     "Resources/Communities.md",
-    "Labs/Network Scans.md",
-    "Labs/Live Hosts.md",
-    "Labs/Labs Index.md",
-    "Labs/Lab Loot.md",
-    "Labs/10.1.0.1 (Sandy)/Sandy Index.md",
-    "Labs/10.1.0.1 (Sandy)/05 - Enumeration.md",
-    "Labs/10.1.0.1 (Sandy)/00 - Overview.md",
-    "Labs/10.0.0.2/10.0.0.2 Index.md",
-    "Labs/10.0.0.2/05 - Enumeration.md",
-    "Labs/10.0.0.2/00 - Overview.md",
-    "Labs/10.0.0.1 (Andy)/Andy Index.md",
-    "Labs/10.0.0.1 (Andy)/20 - Post Exploitation.md",
-    "Labs/10.0.0.1 (Andy)/16 - Potential Local Exploits.md",
-    "Labs/10.0.0.1 (Andy)/15 - Shell as Andy.md",
-    "Labs/10.0.0.1 (Andy)/10 - Website.md",
-    "Labs/10.0.0.1 (Andy)/05 - Enumeration.md",
+    "Labs&Machines/10.1.0.1 (Sandy)/Sandy Index.md",
+    "Labs&Machines/10.1.0.1 (Sandy)/05 - Enumeration.md",
+    "Labs&Machines/10.1.0.1 (Sandy)/00 - Overview.md",
+    "Labs&Machines/10.0.0.2/10.0.0.2 Index.md",
+    "Labs&Machines/10.0.0.2/05 - Enumeration.md",
+    "Labs&Machines/10.0.0.2/00 - Overview.md",
+    "Labs&Machines/10.0.0.1 (Andy)/Andy Index.md",
+    "Labs&Machines/10.0.0.1 (Andy)/20 - Post Exploitation.md",
+    "Labs&Machines/10.0.0.1 (Andy)/16 - Potential Local Exploits.md",
+    "Labs&Machines/10.0.0.1 (Andy)/15 - Shell as Andy.md",
     "Exam/AD Set/Active Directory Set.canvas",
     "Exam/AD Set/Client 2",
     "Exam/AD Set/Client 1",

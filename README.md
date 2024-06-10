@@ -93,7 +93,7 @@ The [[Labs Index|Labs]] folder can be used to house writeups for machines in the
 
 Within each folder is an index for the machine, which links all the related notes on the graph, an Overview which outlines key machine details, and usually a 'Lessons Learned' note which highlights important new skills or tools I learned solving the box (or things I did wrong).
 
-See [[Labs/10.0.0.1 (Andy)/00 - Overview]] for a fleshed out example Box Overview.
+See [[Labs&Machines/10.0.0.1 (Andy)/00 - Overview]] for a fleshed out example Box Overview.
 
 I then create a note for each 'stage' of the box - commonly one for generic enumeration, one for each service I interact with beyond standard enum scripts, and one for each shell I gain as a specific user.
 

@@ -12,7 +12,7 @@ Screenshot of website index page:
 
 ## Gobuster
 
-I ran [[Labs/10.0.0.1 (Andy)/05 - Enumeration#Gobuster|Gobuster]] - it found `/remote.php`.
+I ran [[Labs&Machines/10.0.0.1 (Andy)/05 - Enumeration#Gobuster|Gobuster]] - it found `/remote.php`.
 
 ## Remote File Inclusion
 

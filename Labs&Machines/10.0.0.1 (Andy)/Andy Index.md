@@ -1,6 +1,6 @@
-Overview: [[Labs/10.0.0.1 (Andy)/00 - Overview]]
+Overview: [[Labs&Machines/10.0.0.1 (Andy)/00 - Overview]]
 
-Enumeration: [[Labs/10.0.0.1 (Andy)/05 - Enumeration]]
+Enumeration: [[Labs&Machines/10.0.0.1 (Andy)/05 - Enumeration]]
 
 Website Assessment: [[10 - Website]]
 
