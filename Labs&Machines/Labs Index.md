@@ -19,7 +19,7 @@ See writeups of machines below.
 ### Windows Machines
 
 **Network A**
-- [[Andy Index|Andy (10.0.0.1)]]
+- [[Funnel Index|Andy (10.0.0.1)]]
 
 **Network B**
 - [[Sandy Index|Sandy (10.1.0.1)]]

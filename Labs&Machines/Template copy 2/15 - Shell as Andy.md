@@ -14,7 +14,7 @@ I ran the following commands to enumerate the system:
 
 Here is the output of Windows Exploit Suggester...
 
-I have laid out the potential exploits in [[16 - Potential Local Exploits]]
+I have laid out the potential exploits in [[Labs&Machines/Template copy 2/16 - Potential Local Exploits]]
 
 ## Trying MS16-032
 

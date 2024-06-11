@@ -30,4 +30,4 @@ You can reuse NTLM hashes in pass the hash attacks, or by cracking them and usin
 
 |Hash|Hash Type|Where Found?|Notes|
 |---|---|---|---|
-|08fb...89ed|NTLM|[[15 - Shell as Andy\|Andy]]|We could reuse this in a pass the hash attack...|
+|08fb...89ed|NTLM|[[03 - Shell as Andy|Andy]]|We could reuse this in a pass the hash attack...|

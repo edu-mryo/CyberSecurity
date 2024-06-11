@@ -79,7 +79,7 @@ Here is an example of the graph Obsidian can generate, with all related notes li
 
 Organising notes this way may seem like a lot of overhead. I don't recommend making your notes this fleshed out while solving the box, but I do think it is useful to go back and complete this process after you've finished. It will help consolidate what you've learned, and make examples of exploits easier to find during the exam.
 
-You can treat this as a true [Zettelkasten](https://zenkit.com/en/blog/a-beginners-guide-to-the-zettelkasten-method/), with each note representing a [[Find Writeable Directories|singular concept]] - or you can have notes that show [[15 - Shell as Andy|a narrative]]. I prefer a mix - notes on tools are good as singular items, and writeups of machines are good to read in one long document. Cheat sheets can be used to link the two with examples.
+You can treat this as a true [Zettelkasten](https://zenkit.com/en/blog/a-beginners-guide-to-the-zettelkasten-method/), with each note representing a [[Find Writeable Directories|singular concept]] - or you can have notes that show [[03 - Shell as Andy|a narrative]]. I prefer a mix - notes on tools are good as singular items, and writeups of machines are good to read in one long document. Cheat sheets can be used to link the two with examples.
 
 ### Course Content
 
@@ -93,7 +93,7 @@ The [[Labs Index|Labs]] folder can be used to house writeups for machines in the
 
 Within each folder is an index for the machine, which links all the related notes on the graph, an Overview which outlines key machine details, and usually a 'Lessons Learned' note which highlights important new skills or tools I learned solving the box (or things I did wrong).
 
-See [[Labs&Machines/10.0.0.1 (Andy)/00 - Overview]] for a fleshed out example Box Overview.
+See [[Labs&Machines/Funnel/00 - Overview]] for a fleshed out example Box Overview.
 
 I then create a note for each 'stage' of the box - commonly one for generic enumeration, one for each service I interact with beyond standard enum scripts, and one for each shell I gain as a specific user.
 
