@@ -126,4 +126,9 @@ The funnel team.
 
 The welcome email was a copy of email which seems to be an onboarding email to new employees. This is good because its exposing the `To:` section and we can try to see if anyone in the group has forgotten to change their account password. 
 
+- optimus
+- albert
+- andreas
+- christine
+
 ## SSH Enumeration
