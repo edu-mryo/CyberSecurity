@@ -10,3 +10,7 @@ The nmap enumeration found that the ftp can be Anonymously login allowed ([[01 -
 See [[01 - Enumeration#Deep dive retrieved files from 01 - Enumeration FTP]] for details
 ==**funnel123#!#**==
 
+##### Which user has not changed their default password yet?
+Per [[01 - Enumeration#SSH Enumeration]], it was `christine`
+
+##### Which service is running on TCP port 5432 and listens only on localhost?
