@@ -117,7 +117,8 @@ Key findings:
 ## Deep dive retrieved files from enumeration
 
 ##### PDF contents
-![[Labs&Machines/Funnel/assets/password_policy.png]]
+
+![](Labs&Machines/Funnel/assets/password_policy.png)
 
 The password policy pdf has the general guideline on creating a secure password. It also hints that the default password is `funnel123#!#` .
 
@@ -288,7 +289,7 @@ I found [this website wit postgres cheatsheet](https://www.postgresqltutorial.co
 christine=# \l  // Get list up databases
 ```
 
-![[Labs&Machines/Funnel/assets/postgres_l.png]]
+![](Labs&Machines/Funnel/assets/postgres_l.png)
 
 database called `secrets` stood out immediately. let me try to access the database
 
