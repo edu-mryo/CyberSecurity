@@ -11,9 +11,10 @@ See [[01 - Enumeration#Deep dive retrieved files from 01 - Enumeration FTP]] for
 ==**funnel123#!#**==
 
 ##### Which user has not changed their default password yet?
-Per [[01 - Enumeration#SSH Enumeration]], it was **`christine`**
+Per [[01 - Enumeration#SSH Enumeration]], it was ==**`christine`**==
 
 ##### Which service is running on TCP port 5432 and listens only on localhost?
-**postgresql** ( see [[01 - Enumeration#Enumerating nmap again]])
+==**postgresql**== ( see [[01 - Enumeration#Enumerating nmap again]])
 
 ##### Since you can't access the previously mentioned service from the local machine, you will have to create a tunnel and connect to it from your machine. What is the correct type of tunneling to use? remote port forwarding or local port forwarding?
+Local port forwarding is to access remote machine, Remote Port forwarding to allow remote machine to access your machin

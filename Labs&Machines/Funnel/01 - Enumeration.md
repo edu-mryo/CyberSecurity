@@ -1,4 +1,17 @@
-%% Table of Content Here %%
+
+- [[#nmap|nmap]]
+- [[#FTP|FTP]]
+- [[#Deep dive retrieved files from enumeration|Deep dive retrieved files from enumeration]]
+			- [[#PDF contents|PDF contents]]
+			- [[#Email Content|Email Content]]
+- [[#SSH Enumeration|SSH Enumeration]]
+- [[#Deepdive in SSH user|Deepdive in SSH user]]
+- [[#Enumerating nmap again|Enumerating nmap again]]
+- [[#postgresql enumeration and access|postgresql enumeration and access]]
+- [[#port forwarding|port forwarding]]
+- [[#(yet another) postgres sql enumeration|(yet another) postgres sql enumeration]]
+- [[#Using dynamic port forwarding|Using dynamic port forwarding]]
+
 # Funnel Enumeration
 
 ## nmap
@@ -302,4 +315,50 @@ Yes ! I got something that looks like a flag ==`cf277664b1771217d7006acdea006db1
 
 One of the last questions in the guided mode is about dynamic port forwarding. (Can we access the postgres sql serve using dynamic port forwarding ? ) . Turns out **yes**, but it's pretty tricky.
 
-I referred to [this video](https://youtu.be/_tRr1l4YUQ0?t=959&si=B7FGsmYKKjH6BLSE) and tried the same thing ( )
+I referred to [this video](https://youtu.be/_tRr1l4YUQ0?t=959&si=B7FGsmYKKjH6BLSE) and tried the same thing (SSH -D and add socks5 in the conf file) but my port forwarding didn't work.
+
+The video suggested to add `socks5 127.0.0.1 {port}` just below the default socks4, but I noticed when I try to access the `psql` , this `socks4` was somehow interfering my access
+
+```bash
+ssh -D localhost:1234 christine@funnel.htb  #Dynamic Port forwarding
+```
+
+```bash
+cat /etc/proxychains4.conf #add proxy 
+..... (omit some lines)
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+socks5  127.0.0.1 1337 
+socks4 127.0.0.1 9050
+```
+
+```bash
+ proxychains psql -U christine -h localhost -p 5432
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/aarch64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] Strict chain  ...  127.0.0.1:1337  ...  127.0.0.1:9050 <--socket error or timeout!
+psql: error: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+        Is the server running on that host and accepting TCP/IP connections?
+```
+
+To solve the issue, I commented out `socks4 127.0.0.1 9050` and it worked 
+
+```bash
+$ proxychains psql -U christine -h localhost -p 5432
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/aarch64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] Strict chain  ...  127.0.0.1:1337  ...  127.0.0.1:5432  ...  OK
+Password for user christine: 
+[proxychains] Strict chain  ...  127.0.0.1:1337  ...  127.0.0.1:5432  ...  OK
+psql (16.2 (Debian 16.2-1), server 15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+christine=# 
+```
+
