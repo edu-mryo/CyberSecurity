@@ -21,4 +21,4 @@ I split the lessons into vague categories, with links to the machines that I lea
 
 ## Password Cracking
 
-- Use the `-n` flag when echoing hashes to a file to avoid a trailing newline (see [[Funnel Index|Andy]])
+- Use the `-n` flag when echoing hashes to a file to avoid a trailing newline (see [Andy](Funnel%20Index.md))

@@ -6,11 +6,11 @@
 
 This is a template for an Obsidian Vault used to store OSCP notes. Obsidian allows building a highly connected, searchable resource that you can use to find examples of code snippets and connect related machines.
 
-The [[Course Notes Index|Course Notes]], [[Exam Index|Exam]], and [[Labs Index|Labs]] folders contain template folders for you to add your notes for these respective sections to.
+The [Course Notes](Course%20Notes%20Index.md), [Exam](Exam%20Index.md), and [Labs](Labs%20Index) folders contain template folders for you to add your notes for these respective sections to.
 
-I cannot upload my OSCP notes due to OffSec policy, but I still wanted to share a useful resource. There are plenty of [[Report Templates]] out there, and some good [note-taking advice](https://www.youtube.com/watch?v=MQGozZzHUwQ), but I haven't seen a structured notes template before. Hopefully this will be useful for future students who want to supplement their learning.
+I cannot upload my OSCP notes due to OffSec policy, but I still wanted to share a useful resource. There are plenty of [Report Templates](Report%20Templates.md) out there, and some good [note-taking advice](https://www.youtube.com/watch?v=MQGozZzHUwQ), but I haven't seen a structured notes template before. Hopefully this will be useful for future students who want to supplement their learning.
 
-I've added a few resources to each of the notes, but they are there for you to flesh out (or delete) at your will. This is simply a template, and more detailed notes are available in my [[Cybersecurity Notes]] repository.
+I've added a few resources to each of the notes, but they are there for you to flesh out (or delete) at your will. This is simply a template, and more detailed notes are available in my [Cybersecurity Notes](Cybersecurity%20Notes.md) repository.
 
 ## Installation
 
@@ -75,25 +75,25 @@ I could also use the graph to track where I'd found certain secrets across the n
 
 Here is an example of the graph Obsidian can generate, with all related notes linked together:
 
-![[Pasted image 20210813180944.png]]
+![Pasted image 20210813180944](Pasted%20image%2020210813180944.png)
 
 Organising notes this way may seem like a lot of overhead. I don't recommend making your notes this fleshed out while solving the box, but I do think it is useful to go back and complete this process after you've finished. It will help consolidate what you've learned, and make examples of exploits easier to find during the exam.
 
-You can treat this as a true [Zettelkasten](https://zenkit.com/en/blog/a-beginners-guide-to-the-zettelkasten-method/), with each note representing a [[Find Writeable Directories|singular concept]] - or you can have notes that show [[03 - Shell as Andy|a narrative]]. I prefer a mix - notes on tools are good as singular items, and writeups of machines are good to read in one long document. Cheat sheets can be used to link the two with examples.
+You can treat this as a true [Zettelkasten](https://zenkit.com/en/blog/a-beginners-guide-to-the-zettelkasten-method/), with each note representing a [singular concept](Find%20Writeable%20Directories.md) - or you can have notes that show [a narrative](03%20-%20Shell%20as%20Andy). I prefer a mix - notes on tools are good as singular items, and writeups of machines are good to read in one long document. Cheat sheets can be used to link the two with examples.
 
 ### Course Content
 
-You can make notes on course content within the [[Course Notes Index|Course Notes]] folder. I like to include example commands within code fences (single/triple backtick ``` ` ``` characters).
+You can make notes on course content within the [Course Notes](Course%20Notes%20Index.md) folder. I like to include example commands within code fences (single/triple backtick ``` ` ``` characters).
 
-I like keeping my notes within headings so that I can then link these headers to a practical example on a machine, using `[[course chapter#section]]`.
+I like keeping my notes within headings so that I can then link these headers to a practical example on a machine, using `[](course%20chapter#section)`.
 
 ### Writing up Lab Machines
 
-The [[Labs Index|Labs]] folder can be used to house writeups for machines in the labs. I've added a folder for each one, with `IP Address (Hostname)` as the title.
+The [Labs](Labs%20Index) folder can be used to house writeups for machines in the labs. I've added a folder for each one, with `IP Address (Hostname)` as the title.
 
 Within each folder is an index for the machine, which links all the related notes on the graph, an Overview which outlines key machine details, and usually a 'Lessons Learned' note which highlights important new skills or tools I learned solving the box (or things I did wrong).
 
-See [[Labs&Machines/Funnel/00 - Overview]] for a fleshed out example Box Overview.
+See [00 - Overview](Labs&Machines/Funnel/00%20-%20Overview.md) for a fleshed out example Box Overview.
 
 I then create a note for each 'stage' of the box - commonly one for generic enumeration, one for each service I interact with beyond standard enum scripts, and one for each shell I gain as a specific user.
 
@@ -105,7 +105,7 @@ You will find assorted OSCP resources in the `/Resources` folder. They vary from
 
 Obsidian makes it super easy to build good notes. Here are some of the best features:
 - `Ctrl + K` for inserting links
-- `[[note]]` for referencing an internal note and creating a graph. You can use a pipe (`|`) to name the link, or a hash (`#`) to link to a heading in the note
+- `[note](note)` for referencing an internal note and creating a graph. You can use a pipe (`|`) to name the link, or a hash (`#`) to link to a heading in the note
 - `Ctrl + G` to view your graph
 - `Ctrl + L` to view a 'local graph' for a note - this lets you explore connections to a note
 - `Ctrl + Click` a note link to open it in a new tab (Obsidian [now supports tabs!](https://forum.obsidian.md/t/obsidian-release-v1-0-0/44873))
@@ -116,7 +116,7 @@ You can also make use of the document outline feature (in the right-hand side pa
 
 #### Canvases
 
-Obsidian has a neat new feature called a Canvas which can be used to lay out notes in a free-flowing diagram. You can link existing notes, add images, and create notes that only exist in the canvas. It's potentially useful for Active Directory sets - I've included an [[Active Directory Set.canvas|Example]] in the `/Exam` folder.
+Obsidian has a neat new feature called a Canvas which can be used to lay out notes in a free-flowing diagram. You can link existing notes, add images, and create notes that only exist in the canvas. It's potentially useful for Active Directory sets - I've included an [Example](Active%20Directory%20Set.canvas) in the `/Exam` folder.
 
 #### Workspaces
 
@@ -126,13 +126,13 @@ You can open a workspace using the workspace button in the left-hand sidebar - t
 
 You can create a PDF of a note with the 'Export to PDF' button in the kebab menu at the top of each note.
 
-![[Pasted image 20230324145839.png]]
+![Pasted image 20230324145839](Pasted%20image%2020230324145839.png)
 
 Bear in mind that Obsidian links will no longer work.
 
 #### Website-Friendly Note Conversion
 
-If you want to host your notes on a website, you can convert them to a HTML-friendly format using my [writeup converter](https://github.com/Twigonometry/writeup-converter#website-formatter) tool - this combines all markdown files in a given folder into one HTML document, and reformats obsidian links (`[[]]`) and turns them into valid HTML tags.
+If you want to host your notes on a website, you can convert them to a HTML-friendly format using my [writeup converter](https://github.com/Twigonometry/writeup-converter#website-formatter) tool - this combines all markdown files in a given folder into one HTML document, and reformats obsidian links (`[README](.md)`) and turns them into valid HTML tags.
 
 Remember not to host your writeups or any OffSec course content online...
 

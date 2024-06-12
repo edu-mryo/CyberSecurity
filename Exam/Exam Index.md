@@ -3,13 +3,13 @@ You do not need to flesh this note out in your exam, but it may help to at least
 ## To Do
 
 Independent Machines:
-- [x] [[#Machine 1]]
+- [x] [#Machine 1](#Machine%201)
 	- [x] Low Privilege Access
 	- [x] Privilege Escalation
-- [ ] [[#Machine 2]]
+- [ ] [#Machine 2](#Machine%202)
 	- [ ] Low Privilege Access
 	- [ ] Privilege Escalation
-- [ ] [[#Machine 3]]
+- [ ] [#Machine 3](#Machine%203)
 	- [ ] Low Privilege Access
 	- [ ] Privilege Escalation
 
@@ -20,17 +20,17 @@ Active Directory:
 
 ## AD Set
 
-[[AD Set Domain Index]]
+[AD Set Domain Index](AD%20Set%20Domain%20Index.md)
 
 ## Machine 1
 
-[[Exam Machine 1 Index]]
+[Exam Machine 1 Index](Exam%20Machine%201%20Index.md)
 
 This machine involved...
 
 ## Machine 2
 
-[[Exam Machine 2 Index]]
+[Exam Machine 2 Index](Exam%20Machine%202%20Index.md)
 
 ### Todo
 
@@ -43,7 +43,7 @@ This machine involved...
 
 ## Machine 3
 
-[[Exam Machine 3 Index]]
+[Exam Machine 3 Index](Exam%20Machine%203%20Index.md)
 
 ### Todo
 

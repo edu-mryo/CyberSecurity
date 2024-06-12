@@ -1,1 +1,1 @@
-Overview: [[Exam/AD Set/Domain Controller/00 - Overview]]
+Overview: [00 - Overview](Exam/AD%20Set/Domain%20Controller/00%20-%20Overview.md)
