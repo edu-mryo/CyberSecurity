@@ -8,9 +8,8 @@
 - [Enumerating nmap again](#enumerating-nmap-again)
 - [postgresql enumeration and access](#postgresql-enumeration-and-access)
 - [port forwarding](#port-forwarding)
-- [](yet%20another)%20postgres%20sql%20enumeration](#yet-another-postgres-sql-enumeration|(yet%20another)%20postgres%20sql%20enumeration)
+- [(yet another) postgres sql enumeration](#yet-another-postgres-sql-enumeration)
 - [Using dynamic port forwarding](#using-dynamic-port-forwarding)
-
 
 # Funnel Enumeration
 

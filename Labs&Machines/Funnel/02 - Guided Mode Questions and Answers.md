@@ -7,7 +7,7 @@ The nmap enumeration found that the ftp can be Anonymously login allowed ([](01%
 - **mail_backup**
 
 ##### What is the default account password that every new member on the "Funnel" team should change as soon as possible?
-See [](01%20-%20Enumeration.md.md#Deep%20dive%20retrieved%20files%20from%2001%20-%20Enumeration%20FTP) for details
+See [[]] for details
 - **funnel123#!#**
 
 ##### Which user has not changed their default password yet?
