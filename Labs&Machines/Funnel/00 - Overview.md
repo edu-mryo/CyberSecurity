@@ -39,4 +39,4 @@ You can use this section to track when you started and finished this machine, in
 
 Use this section to categorise the machine so you can easily search for machines similar to it.
 
-#windows
+#windows![[assets/Screenshot 2024-06-13 at 12.40.32 AM.png]]
