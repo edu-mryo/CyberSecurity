@@ -15,30 +15,28 @@ Box outlines are useful for revisiting the box and seeing how you exploited it. 
 
 **Enumeration**
 
-What services are running on the box? How did you enumerate them?
+A standard enumeration (nmap) will give us enough insights on this machine.
 
 **Exploitation**
 
-What exploits did you try? Which ones worked?
+Local Port Forwarding 
 
 **Privilege Escalation**
 
-What user did you gain access on the box as? What did you find during local enumeration? How did you escalate your privileges?
+`christine` did not change his/her default password, which gave me access to the ssh and further understand the machine vulnerability.
 
 **Post Exploitation**
 
-Any useful information found on the machine.
+Dynamic Port Forwarding works
 
 ## Timeline
 
 You can use this section to track when you started and finished this machine, including when you gained a 'foothold' (low-privilege shell) on the box and began privilege escalation. Knowing how long it took can help to judge how long a machine may take on the exam.
 
-|Date Started|Date of Foothold|Date Finished|
-|---|---|---|
-|||
+| Date Started | Date of Foothold | Date Finished |
+| ------------ | ---------------- | ------------- |
+| 2024/6/11    | 2024/6/11        | 2024/6/12     |
 
 ## Tags
 
-Use this section to categorise the machine so you can easily search for machines similar to it.
-
-#windows
+#Linux #SSH #Tunneling #LocalPortForwarding #postgresql
