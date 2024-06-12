@@ -230,3 +230,5 @@ There are three types of SSH port forwarding:
 2. **Remote port forwarding**: Redirects traffic from a port on the remote server to a specified port on the client machine.
 3. **Dynamic port forwarding**: Creates a SOCKS proxy on the client machine, enabling the forwarding of traffic from various applications through the SSH connection.
 ```
+
+For this case, we need to execute `Local Port Forwarding` as we are going to access the remote server ( target machine) 
