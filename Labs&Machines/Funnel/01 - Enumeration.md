@@ -244,14 +244,31 @@ ssh -L [local_port]:[destination_address]:[destination_port] [username]@[ssh_ser
 and then open  a new tab to call postgresql
 
 ```bash
-psql -
+psql -h localhost -U christine -p 1234
 ```
 
-Reading this command, I initially thought the correct way to port forward was to
+Reading this command, I initially thought the correct way to port forward was as below
 
 ```bash
 ssh -L 1234:funnel.htb:5432 christine@funnel.htb
 ```
 
+However, this was continuously giving me an error for failing name resolution.
+Checking the [video](https://www.youtube.com/watch?v=_tRr1l4YUQ0&t=636s) Turns out the `destination_address` i have to specify here was my localhost, not my target host.
 
-https://youtu.be/_tRr1l4YUQ0?t=636&si=ZXVOnEOO8t0356KV
+```bash
+ssh -L 1234:localhost:5432 christine@funnel.htb
+psql -h localhost -U christine -p 1234
+
+Password for user christine: 
+psql (16.2 (Debian 16.2-1), server 15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+christine=# 
+```
+
+## (yet another) postgres sql enumeration 
+
+I found [this website wit postgres cheatsheet](https://www.postgresqltutorial.com/postgresql-cheat-sheet/)
+
+![[postgres_l.png]]
