@@ -232,3 +232,26 @@ There are three types of SSH port forwarding:
 ```
 
 For this case, we need to execute `Local Port Forwarding` as we are going to access the remote server ( target machine) 
+
+## port forwarding
+
+The [website](https://builtin.com/software-engineering-perspectives/ssh-port-forwarding#) actually has the command example of how to port foward
+
+```bash
+ssh -L [local_port]:[destination_address]:[destination_port] [username]@[ssh_server]
+```
+
+and then open  a new tab to call postgresql
+
+```bash
+psql -
+```
+
+Reading this command, I initially thought the correct way to port forward was to
+
+```bash
+ssh -L 1234:funnel.htb:5432 christine@funnel.htb
+```
+
+
+https://youtu.be/_tRr1l4YUQ0?t=636&si=ZXVOnEOO8t0356KV
