@@ -1,10 +1,4 @@
-- [[#nmap|nmap]]
-- [[#FTP|FTP]]
-- [[#Deep dive retrieved files from enumeration|Deep dive retrieved files from enumeration]]
-			- [[#PDF contents|PDF contents]]
-			- [[#Email Content|Email Content]]
-- [[#SSH Enumeration|SSH Enumeration]]
-
+%% Table of Content Here %%
 # Funnel Enumeration
 
 ## nmap
@@ -185,3 +179,32 @@ christine@funnel:~$
 | christine | T         |
 
 Turns out it was `christine` who forgot to change her password.
+
+## Deepdive in SSH user
+
+Looking into `christine`'s machine, I could not find any `flag.txt` and no access to root directory. I tried `sudo -l` to see any commands I can run in `sudo` but turns out , it wasn't allowed
+
+```bash
+christine@funnel:/$ sudo -l
+[sudo] password for christine: 
+Sorry, user christine may not run sudo on funnel.
+```
+
+Since I have guided mode on , I checked the next question which gave me a big hint: **Which service is running on TCP port 5432** ...
+
+## Enumerating nmap again
+With the hint given by the guided mode, I once again ran the nmap for port 5432
+
+```bash
+$ nmap -p 5432 -sCV funnel.htb
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-06-12 01:39 BST
+Nmap scan report for funnel.htb (10.129.228.195)
+Host is up (0.25s latency).
+
+PORT     STATE  SERVICE    VERSION
+5432/tcp closed postgresql
+```
+
+Seems like we have a running `postgresql`
+
+## postgresql enumeration and accesss
