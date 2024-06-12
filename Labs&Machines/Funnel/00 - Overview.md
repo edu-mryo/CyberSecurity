@@ -1,4 +1,4 @@
-![](Labs&Machines/Funnel/funnel_logo.png)
+![](Labs&Machines/Funnel/assets/funnel_logo.png)
 # Funnel Overview
 
 Machine Details:
