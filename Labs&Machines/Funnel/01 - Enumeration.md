@@ -297,3 +297,9 @@ secrets=# select * from flag;
 ```
 
 Yes ! I got something that looks like a flag ==`cf277664b1771217d7006acdea006db1`==
+
+## Using dynamic port forwarding
+
+One of the last questions in the guided mode is about dynamic port forwarding. (Can we access the postgres sql serve using dynamic port forwarding ? ) . Turns out **yes**, but it's pretty tricky.
+
+I referred to [this video](https://youtu.be/_tRr1l4YUQ0?t=959&si=B7FGsmYKKjH6BLSE) and tried the same thing ( )
