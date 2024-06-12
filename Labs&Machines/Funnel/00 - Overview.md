@@ -1,4 +1,4 @@
-![[funnel_logo.png]]
+![funnel_logo](funnel_logo.png)
 # Funnel Overview
 
 Machine Details:

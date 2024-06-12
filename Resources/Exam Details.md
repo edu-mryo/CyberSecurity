@@ -31,9 +31,9 @@ This page collects several articles on exam topics, including machine hints.
 
 ### Restrictions on Tools
 
-In summary, commercial tools, automatic exploitation tools, and mass scanning tools are forbidden. Source: [[https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#exam-restrictions](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#exam-restrictions]]
+In summary, commercial tools, automatic exploitation tools, and mass scanning tools are forbidden. Source: [](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#exam-restrictions](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#exam-restrictions](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#exam-restrictions)
 
-**One use** of Metasploit is allowed. However, utility such as the metasploit handler module and the msfvenom payload generator have no limitations on use. **Auxiliary** modules are also limited, such as scanners. Source: [[https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#metasploit-restrictions](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#metasploit-restrictions]]
+**One use** of Metasploit is allowed. However, utility such as the metasploit handler module and the msfvenom payload generator have no limitations on use. **Auxiliary** modules are also limited, such as scanners. Source: [](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#metasploit-restrictions](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#metasploit-restrictions](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#metasploit-restrictions)
 
 Some common tools such as LinPEAS have caused issues in the past with automatic exploitation features - the [updated version](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/issues/125) of LinPEAS is now OSCP-friendly, but Offsec will make no exceptions in future. Read the full statement here: [https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/](https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/)
 

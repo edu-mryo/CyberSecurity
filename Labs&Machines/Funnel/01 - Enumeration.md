@@ -1,15 +1,15 @@
-- [[#nmap|nmap]]
-- [[#ftp|FTP]]
-- [[#deep-dive-retrieved-files-from-enumeration|Deep dive retrieved files from enumeration]]
-			- [[#pdf-contents|PDF contents]]
-			- [[#email-content|Email Content]]
-- [[#ssh-enumeration|SSH Enumeration]]
-- [[#deepdive-in-ssh-user|Deepdive in SSH user]]
-- [[#enumerating-nmap-again|Enumerating nmap again]]
-- [[#postgresql-enumeration-and-access|postgresql enumeration and access]]
-- [[#port-forwarding|port forwarding]]
-- [[yet another) postgres sql enumeration](#yet-another-postgres-sql-enumeration|(yet another) postgres sql enumeration]]
-- [[#using-dynamic-port-forwarding|Using dynamic port forwarding]]
+- [nmap](#nmap)
+- [FTP](#ftp)
+- [Deep dive retrieved files from enumeration](#deep-dive-retrieved-files-from-enumeration)
+			- [PDF contents](#pdf-contents)
+			- [Email Content](#email-content)
+- [SSH Enumeration](#ssh-enumeration)
+- [Deepdive in SSH user](#deepdive-in-ssh-user)
+- [Enumerating nmap again](#enumerating-nmap-again)
+- [postgresql enumeration and access](#postgresql-enumeration-and-access)
+- [port forwarding](#port-forwarding)
+- [](yet%20another)%20postgres%20sql%20enumeration](#yet-another-postgres-sql-enumeration|(yet%20another)%20postgres%20sql%20enumeration)
+- [Using dynamic port forwarding](#using-dynamic-port-forwarding)
 
 
 # Funnel Enumeration
@@ -118,7 +118,7 @@ Key findings:
 
 ##### PDF contents
 
-![[password_policy.png]]
+![password_policy](password_policy.png)
 The password policy pdf has the general guideline on creating a secure password. It also hints that the default password is `funnel123#!#` .
 
 ##### Email Content
@@ -288,7 +288,7 @@ I found [this website wit postgres cheatsheet](https://www.postgresqltutorial.co
 christine=# \l  // Get list up databases
 ```
 
-![[postgres_l.png]]
+![postgres_l](postgres_l.png)
 
 database called `secrets` stood out immediately. let me try to access the database
 
