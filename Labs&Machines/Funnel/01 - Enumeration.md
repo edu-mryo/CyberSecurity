@@ -207,4 +207,26 @@ PORT     STATE  SERVICE    VERSION
 
 Seems like we have a running `postgresql`
 
-## postgresql enumeration and accesss
+## postgresql enumeration and access
+
+Accessing postgresql requires `psql` command, which the default parrot OS has.
+
+```bash
+$ psql -h funnel.htb
+psql: error: could not connect to server: Connection refused
+	Is the server running on host "funnel.htb" (10.129.228.195) and accepting
+	TCP/IP connections on port 5432?
+```
+
+Unfortunately, the postgresql seems to be refusing the connection.
+Looking into ( accidentally...) the guided mode, they are suggesting to check what `local port forwarding` and `reomte port forwardin` are. These seem to hint that we have to make `tunnel` to  access the postgresql machine. 
+
+The resource I referred is [This one](https://builtin.com/software-engineering-perspectives/ssh-port-forwarding#)and it gives you the definition of each tunneling as below.
+
+```
+There are three types of SSH port forwarding:
+
+1. **Local port forwarding**: Redirects traffic from a local port on the client machine to a specified port on a remote server via an SSH connection.
+2. **Remote port forwarding**: Redirects traffic from a port on the remote server to a specified port on the client machine.
+3. **Dynamic port forwarding**: Creates a SOCKS proxy on the client machine, enabling the forwarding of traffic from various applications through the SSH connection.
+```
