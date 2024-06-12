@@ -7,14 +7,14 @@ The nmap enumeration found that the ftp can be Anonymously login allowed ([](01%
 - **mail_backup**
 
 ##### What is the default account password that every new member on the "Funnel" team should change as soon as possible?
-See [[]] for details
+See [this section](01%20-%20Enumeration.md#Deep%20dive%20retrieved%20files%20from%20enumeration) for details
 - **funnel123#!#**
 
 ##### Which user has not changed their default password yet?
-- Per [](01%20-%20Enumeration.md#SSH%20Enumeration), it was **`christine`**
+- Per [enumeration result](01%20-%20Enumeration.md#SSH%20Enumeration), it was **`christine`**
 
 ##### Which service is running on TCP port 5432 and listens only on localhost?
-- **postgresql** ( see [](01%20-%20Enumeration.md.md#Enumerating%20nmap%20again))
+- **postgresql** ( see [second nmap enumeration](01%20-%20Enumeration.md.md#Enumerating%20nmap%20again))
 
 ##### Since you can't access the previously mentioned service from the local machine, you will have to create a tunnel and connect to it from your machine. What is the correct type of tunneling to use? remote port forwarding or local port forwarding?
 - Local port forwarding is to access remote machine, Remote Port forwarding to allow remote machine to access your machine . For this, the answer is local port forwarding
