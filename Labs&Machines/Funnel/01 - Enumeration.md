@@ -309,7 +309,7 @@ secrets=# select * from flag;
  cf277664b1771217d7006acdea006db1
 ```
 
-Yes ! I got something that looks like a flag ==`cf277664b1771217d7006acdea006db1`==
+Yes ! I got something that looks like a flag ==`cf2**********************`==
 
 ## Using dynamic port forwarding
 

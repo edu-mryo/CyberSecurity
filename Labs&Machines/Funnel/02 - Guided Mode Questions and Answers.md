@@ -17,4 +17,14 @@ Per [[01 - Enumeration#SSH Enumeration]], it was ==**`christine`**==
 ==**postgresql**== ( see [[01 - Enumeration#Enumerating nmap again]])
 
 ##### Since you can't access the previously mentioned service from the local machine, you will have to create a tunnel and connect to it from your machine. What is the correct type of tunneling to use? remote port forwarding or local port forwarding?
-Local port forwarding is to access remote machine, Remote Port forwarding to allow remote machine to access your machin
+Local port forwarding is to access remote machine, Remote Port forwarding to allow remote machine to access your machine . For this, the answer is ==local port forwarding==
+
+##### What is the name of the database that holds the flag?
+==secrets==
+
+##### Could you use a dynamic tunnel instead of local port forwarding? Yes or No.
+==yes== 
+
+##### Submit the flag located in the database.
+==cf2*********************==
+
