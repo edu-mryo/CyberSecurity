@@ -6,7 +6,7 @@
 
 ### From /u/tristanlogd
 
-![Pasted image 20210418203944](Pasted%20image%2020210418203944.png)
+![[Pasted image 20210418203944.png]]
 
 Source: [https://www.reddit.com/r/oscp/comments/k7x4o1/just_passed_oscpmy_journey_and_tips/](https://www.reddit.com/r/oscp/comments/k7x4o1/just_passed_oscpmy_journey_and_tips/)
 
@@ -26,7 +26,7 @@ The TLDR is that I learned a lot from my OSCP and thoroughly enjoyed the experie
 
 ## Taking Screenshots
 
-Proof screenshots for the exam [need to include](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#screenshot-requirements) the following:
+Proof screenshots for the exam [[https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide#screenshot-requirements]] the following:
 - IP address of the machine (to prove you aren't in a container)
 - Contents of `proof.txt`
 

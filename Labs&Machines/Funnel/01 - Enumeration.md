@@ -1,15 +1,15 @@
-- [nmap](#nmap)
-- [FTP](#ftp)
-- [Deep dive retrieved files from enumeration](#deep-dive-retrieved-files-from-enumeration)
-			- [PDF contents](#pdf-contents)
-			- [Email Content](#email-content)
-- [SSH Enumeration](#ssh-enumeration)
-- [Deepdive in SSH user](#deepdive-in-ssh-user)
-- [Enumerating nmap again](#enumerating-nmap-again)
-- [postgresql enumeration and access](#postgresql-enumeration-and-access)
-- [port forwarding](#port-forwarding)
-- [(yet another) postgres sql enumeration](#yet-another-postgres-sql-enumeration)
-- [Using dynamic port forwarding](#using-dynamic-port-forwarding)
+- [[#nmap|nmap]]
+- [[#ftp|FTP]]
+- [[#deep-dive-retrieved-files-from-enumeration|Deep dive retrieved files from enumeration]]
+			- [[#pdf-contents|PDF contents]]
+			- [[#email-content|Email Content]]
+- [[#ssh-enumeration|SSH Enumeration]]
+- [[#deepdive-in-ssh-user|Deepdive in SSH user]]
+- [[#enumerating-nmap-again|Enumerating nmap again]]
+- [[#postgresql-enumeration-and-access|postgresql enumeration and access]]
+- [[#port-forwarding|port forwarding]]
+- [[yet another) postgres sql enumeration](#yet-another-postgres-sql-enumeration|(yet another) postgres sql enumeration]]
+- [[#using-dynamic-port-forwarding|Using dynamic port forwarding]]
 
 
 # Funnel Enumeration
@@ -119,7 +119,7 @@ Key findings:
 ##### PDF contents
 
 ![[password_policy.png]]
-The password policy pdf has the general guideline on creating a secure password. It also hints that the default password is ==`funnel123#!#`== .
+The password policy pdf has the general guideline on creating a secure password. It also hints that the default password is `funnel123#!#` .
 
 ##### Email Content
 
@@ -147,7 +147,7 @@ The welcome email was a copy of email which seems to be an onboarding email to n
 
 ## SSH Enumeration
 
-Assuming that one of them forgot to change their password, I'm trying to access each user's machine by using the default ==funnel123#!#==  
+Assuming that one of them forgot to change their password, I'm trying to access each user's machine by using the default funnel123#!#  
 
 ```bash
 $ ssh christine@funnel.htb
@@ -309,7 +309,7 @@ secrets=# select * from flag;
  cf277664b1771217d7006acdea006db1
 ```
 
-Yes ! I got something that looks like a flag ==`cf2**********************`==
+Yes ! I got something that looks like a flag `cf2**********************`
 
 ## Using dynamic port forwarding
 
