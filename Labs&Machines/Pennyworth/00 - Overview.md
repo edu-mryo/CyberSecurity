@@ -1,7 +1,7 @@
 
 # Funnel Overview
 
-![](../../Pasted%20image%2020240613084006.png)
+![](assets/pennyworth_logo.png)
 
 Machine Details:
 
