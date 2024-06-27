@@ -56,4 +56,4 @@ Jenkins seems to be an [open-soucred CI/CD](https://www.jenkins.io/) ? I could n
 
 Turns out `root:password` was the correct combination.
 
-
+Now, Jenkins is a CI/CD tool, so it's likely that there is a way to upload a script to the tool and somehow get shell. A some research 
