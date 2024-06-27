@@ -37,3 +37,23 @@ PORT     STATE SERVICE VERSION
 |_/
 
 ```
+
+Seems like it only has one open HTTP server at `8080`
+
+Key findings: 
+- HTTP on port 8080
+
+## Web Access
+
+Accessing `http://pennyworth.htb:8080` ( I added target IP in `/etc/hosts`) led me to a login page for `Jenkins`
+
+![](assets/jenkings_login.png)
+
+Jenkins seems to be an [open-soucred CI/CD](https://www.jenkins.io/) ? I could not find any information on default credential for this product. Given the limited intel, I'm assuming the credential is something basic such as
+- `root:password`
+- `root:admin`
+- `admin:admin`
+
+Turns out `root:password` was the correct combination.
+
+
