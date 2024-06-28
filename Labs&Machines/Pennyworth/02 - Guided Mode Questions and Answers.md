@@ -25,8 +25,6 @@
 > -u
 
 ##### What is the term used to describe making a target host initiate a connection back to the attacker host and then accepting commands and executing them?
->shell
-
-
+>reverse shell
 ##### Submit the flag located in root's home directory.
-
+>9cd**
