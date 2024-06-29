@@ -5,9 +5,9 @@
 
 Machine Details:
 
-| IP  | Hostname | Operating System |
-| --- | -------- | ---------------- |
-|     |          |                  |
+| IP  | Hostname       | Operating System |
+| --- | -------------- | ---------------- |
+|     | pennyworth.htb | Linux            |
 
 ## Box Outline
 
@@ -23,19 +23,19 @@ In this example, we will be exploring precisely this typology of attack vectors.
 
 
 **Enumeration**
-
+Standard Enumeration using Nmap and Googling
 
 
 **Exploitation**
-
+Required some Google search on how to get shell over Jenkins ci/cd and gain access via `nc -lnvp {port}` .
 
 
 **Privilege Escalation**
-
+Not required.
 
 
 **Post Exploitation**
-
+n/a
 
 
 ## Timeline
@@ -44,6 +44,7 @@ You can use this section to track when you started and finished this machine, in
 
 | Date Started | Date of Foothold | Date Finished |
 | ------------ | ---------------- | ------------- |
-| 2024/6/13    |                  |               |
+| 2024/6/13    | 2024/6/11        | 2024/6/11     |
 
 ## Tags
+#Linux #Jenkins 
