@@ -1,4 +1,4 @@
-# OSCP Notes Template
+# OSSSSSCP Notes Template
 
 **Important Note**: if you use this repository, make sure you do not publicly share your OSCP notes by accident (i.e. in a public fork of this repo) or OffSec will be [angry](https://cdn.emojidex.com/emoji/seal/Angryping.png). I am not responsible if you do so and lose access to your course - please be careful and clone this resource locally rather than forking it! If you want your notes on GitHub (which I agree is useful) follow these steps to create a private fork: https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private
 
