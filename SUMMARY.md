@@ -35,6 +35,8 @@
         * [2.2 Explain common threat vectors and attack surfaces](exam/comptia-security+-sy0-701/flashcards/2.0-threats-vulnerabilities-and-mitigations/2.2-explain-common-threat-vectors-and-attack-surfaces.md)
         * [2.3 Explain various types of vulnerabilities](exam/comptia-security+-sy0-701/flashcards/2.0-threats-vulnerabilities-and-mitigations/2.3-explain-various-types-of-vulnerabilities.md)
         * [2.4 Given a scenario, analyze indicators of malicious activity](exam/comptia-security+-sy0-701/flashcards/2.0-threats-vulnerabilities-and-mitigations/2.4-given-a-scenario-analyze-indicators-of-malicious-activity.md)
+  * [eJPT (eLearnSecurity Jr. Penetration Tester)](exam/ejpt-elearnsecurity-jr.-penetration-tester/README.md)
+    * [Page 2](exam/ejpt-elearnsecurity-jr.-penetration-tester/page-2.md)
 * [Labs\&Machines](labs-and-machines/README.md)
   * [Archetype](labs-and-machines/archetype/README.md)
     * [Archetyp Overview](<Labs\&Machines/Archetype/00 - Overview.md>)
