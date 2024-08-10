@@ -239,7 +239,7 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 - `whois` gives you the **who** behind the website and `netcraft` is more on **what**
 
 ## DNS recon
-- `dnsrecon` command
+- `dnsrecon` command ([Github](https://github.com/darkoperator/dnsrecon))
 	- Provides insights on target domain including subdomain, IP, DNS records etc
 		- IP address
 		- Subdomain
@@ -273,3 +273,6 @@ $   wafw00f https://example.org
 [+] The site https://example.org is behind Edgecast (Verizon Digital Media) WAF.
 [~] Number of requests: 2
 ```
+
+## Subdomain enumeration with sublist3r
+
