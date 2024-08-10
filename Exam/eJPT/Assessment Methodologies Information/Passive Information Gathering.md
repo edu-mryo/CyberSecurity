@@ -241,8 +241,35 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 ## DNS recon
 - `dnsrecon` command
 	- Provides insights on target domain including subdomain, IP, DNS records etc
-	- IP address
-	- Subdomain
-	- MX ( Mail Server )
-	- NS ( Name Server )
-- 
+		- IP address
+		- Subdomain
+		- MX ( Mail Server )
+		- NS ( Name Server )
+- [DNS Dumpster](https://dnsdumpster.com/) : dnsrecon on steroid. Provides you more accurate and detailed information
+
+## WAF with wafw00f
+- WAF : Web Application Firewall
+- Wafw00f : Command line tool to guess which WAF is used on target system. Preinstalled on Kali 
+	- Link : [Wafw00f](https://www.kali.org/tools/wafw00f/)
+	- Github repo : 
+```bash
+$   wafw00f https://example.org
+
+                   ______
+                  /      \
+                 (  Woof! )
+                  \  ____/                      )
+                  ,,                           ) (_
+             .-. -    _______                 ( |__|
+            ()``; |==|_______)                .)|__|
+            / ('        /|\                  (  |__|
+        (  /  )        / | \                  . |__|
+         \(_)_))      /  |  \                   |__|
+
+                    ~ WAFW00F : v2.2.0 ~
+    The Web Application Firewall Fingerprinting Toolkit
+
+[*] Checking https://example.org
+[+] The site https://example.org is behind Edgecast (Verizon Digital Media) WAF.
+[~] Number of requests: 2
+```
