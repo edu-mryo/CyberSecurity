@@ -101,4 +101,5 @@ root@kali:~#
 ### Browser extensions
 - Tools [Wappalyzer](https://www.wappalyzer.com/) and [Builtwith](https://builtwith.com/) can give you more information on website such as
 	- Frontend / Backend stack 
-	- 
+	- What CMS the target is using
+ 
