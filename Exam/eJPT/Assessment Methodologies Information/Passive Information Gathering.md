@@ -251,7 +251,7 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 - WAF : Web Application Firewall
 - Wafw00f : Command line tool to guess which WAF is used on target system. Preinstalled on Kali 
 	- Link : [Wafw00f](https://www.kali.org/tools/wafw00f/)
-	- Github repo : 
+	- [Github repo](https://github.com/EnableSecurity/wafw00f)
 ```bash
 $   wafw00f https://example.org
 
