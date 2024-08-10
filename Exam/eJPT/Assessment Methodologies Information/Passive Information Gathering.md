@@ -238,3 +238,11 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 	- eg : https://sitereport.netcraft.com/?url=http://google.com
 - `whois` gives you the **who** behind the website and `netcraft` is more on **what**
 
+## DNS recon
+- `dnsrecon` command
+	- Provides insights on target domain including subdomain, IP, DNS records etc
+	- IP address
+	- Subdomain
+	- MX ( Mail Server )
+	- NS ( Name Server )
+- 
