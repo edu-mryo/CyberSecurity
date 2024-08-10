@@ -1,6 +1,6 @@
 **What is Passive Info gathering** : To gather information without actively interacting with the target.
 
-#### command
+### Command
 - `host`: to get IP information
 
 ```bash
@@ -90,3 +90,15 @@ HTTP Headers:
 root@kali:~#
 ```
 
+### robots.txt
+- A txt file saved in website which you can use to control what pages are blocked from crawler
+	- Link : [# How to write and submit a robots.txt file](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt#create_rules)
+- Check disallowed pages and subdirectories for possible information
+
+### sitemap.xml
+- Gives you information on website structure. You can see what subdirectories exist under the domain
+
+### Browser extensions
+- Tools [Wappalyzer](https://www.wappalyzer.com/) and [Builtwith](https://builtwith.com/) can give you more information on website such as
+	- Frontend / Backend stack 
+	- 
