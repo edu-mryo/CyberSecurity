@@ -51,15 +51,44 @@
 	- `8.8.8.8`: Google
 
 ### Zonetransfer
-- **Zonetransfer**, also sometimes referred to as AXFR (a DNS query type), is a mechanism used in the Domain Name System (DNS) to replicate and synchronize all DNS records for a particular zone between DNS servers.   
+- **Zonetransfer**, also sometimes referred to as **AXFR** (a DNS query type), is a mechanism used in the Domain Name System (DNS) to replicate and synchronize all DNS records for a particular zone between DNS servers.   
 
 - **In simpler terms**: It's like making a copy of the entire DNS "phonebook" for a specific domain (the zone) and transferring that copy to another DNS server.   
 
 How it works:
 
-1. Primary and Secondary Servers: Typically, there's a primary DNS server that holds the authoritative copy of the zone's records. Secondary servers request a zone transfer from the primary to keep their copies up-to-date.   
-2. Initiation: The secondary server initiates the zone transfer by sending a special request to the primary.   
-3. Transfer: If allowed, the primary server sends all its DNS records for the zone to the secondary server.
-4. Synchronization: The secondary server updates its own database with the received records, ensuring it has the latest information.
+1. **Primary and Secondary Servers**: Typically, there's a primary DNS server that holds the authoritative copy of the zone's records. Secondary servers request a zone transfer from the primary to keep their copies up-to-date.   
+2. **Initiation**: The secondary server initiates the zone transfer by sending a special request to the primary.   
+3. **Transfer**: If allowed, the primary server sends all its DNS records for the zone to the secondary server.
+4. **Synchronization**: The secondary server updates its own database with the received records, ensuring it has the latest information.
+
+### `dnsenum` command
+- `dnsenum`: [Link](https://www.kali.org/tools/dnsenum/)
+	- A multithreaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks. 
+	- The main purpose of Dnsenum is to gather as much information as possible about a domain. The program currently performs the following operations:
+
+```txt
+1) Get the host's addresse (A record).
+
+2) Get the namservers (threaded).
+
+3) Get the MX record (threaded).
+
+4) Perform axfr queries on nameservers and get BIND VERSION (threaded).
+
+5) Get extra names and subdomains via google scraping
+   (google query = "allinurl: -www site:domain").
+
+6) Brute force subdomains from file, can also perform recursion
+   on subdomain that have NS records (all threaded).
+
+7) Calculate C class domain network ranges and perform whois
+   queries on them (threaded).
+
+8) Perform reverse lookups on netranges
+   ( C class or/and whois netranges) (threaded).
+
+9) Write to domain_ips.txt file ip-blocks.
+```
 
 
