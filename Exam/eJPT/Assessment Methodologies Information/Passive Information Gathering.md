@@ -322,4 +322,41 @@ tools.kali.org
 	- `filetyp:{file format}`
 	- `site:{*.target.com}` : To get the subdomain result of target
 - [WaybackMachine](https://web.archive.org/) : A tool to see the page archives
-- 
+- [Exploit DB](https://www.exploit-db.com/): Website listing all the exploitations
+
+## Email Harvesting with theHarvester
+- theHarvester: ([Github](https://github.com/laramies/theHarvester)/ [Kali](https://www.kali.org/tools/theharvester/))
+- theHarvester can be used during the reconnaissance stage. It performs open source intelligence (OSINT) gathering to help determine a domain's external threat landscape.
+	- The tool gathers names, emails, IPs, subdomains, and URLs by using multiple public resources.
+
+```bash
+root@kali:~# theHarvester -d kali.org -l 500 -b duckduckgo
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.4.3                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+
+[*] Target: kali.org
+
+[*] Searching Duckduckgo.
+
+[*] No IPs found.
+
+[*] No emails found.
+
+[*] Hosts found: 14
+---------------------
+[...] // Gives you the list of result
+
+```console
+```
+
