@@ -92,4 +92,29 @@ How it works:
 ```
 
 ## Host Discovery Using Nmap
+ - `nmap`: a port scanning tool to see what ports are active in the target system and what sort of services are available. One of the key tools for penetration testing
+	 -  [Nmap Guide](https://nmap.org/)
+	 - [Nmap Cheatsheet](https://www.stationx.net/nmap-cheat-sheet/)
+ - `-sn` : No Port / Ping scan. This flag can be used to see active IPs
 
+## Port Scanning with Nmap
+- Default scan : `nmap {target}`
+	- Scan most common 1000 ports
+- `-Pn`: Port scan without Ping. Useful if the target bans ICMP
+- `-p`: Specify target port
+	- `-p 80`
+	- `-p 1-1000
+- `-F`: Fast scan. Scans top 100 ports
+- `-sU`: UDP scan. Nmap's default scan is TCP
+- `-v`: Verbosity. Gives you more details
+- `-sV`: Service scan. Gives you details on what service the port is running.
+- `-O`: OS scanning on target. This scan is not perfectly accurate
+- `-sC`: Default script scan for more detailed scanning
+- `-A`: Aggressive scan which is relevant to -sV -O and -sC
+- `-T`: Adjust scan speed
+	- 0 : Paranoid
+	- 1: 
+	- 2
+	- 3
+	- 4
+	- 5
