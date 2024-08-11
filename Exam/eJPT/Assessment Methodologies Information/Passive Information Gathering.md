@@ -360,3 +360,5 @@ root@kali:~# theHarvester -d kali.org -l 500 -b duckduckgo
 ```console
 ```
 
+## Leaked Password Database
+- [haveibeenpwnd](https://haveibeenpwned.com/)
