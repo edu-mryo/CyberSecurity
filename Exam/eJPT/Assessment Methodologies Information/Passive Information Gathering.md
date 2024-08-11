@@ -275,4 +275,51 @@ $   wafw00f https://example.org
 ```
 
 ## Subdomain enumeration with sublist3r
+- sublist3r : ([Github](https://github.com/aboul3la/Sublist3r)/[Kali](https://www.kali.org/tools/sublist3r/))
+	- This tool is designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting over the network. 
+	- Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu, and Ask. Sublist3r also enumerates subdomains using Netcraft, Virustotal, ThreatCrowd, DNSdumpster, and ReverseDNS.
 
+```bash
+root@kali:~# sublist3r -d kali.org -t 3 -e bing
+
+                 ____        _     _ _     _   _____
+                / ___| _   _| |__ | (_)___| |_|___ / _ __
+                \___ \| | | | '_ \| | / __| __| |_ \| '__|
+                 ___) | |_| | |_) | | \__ \ |_ ___) | |
+                |____/ \__,_|_.__/|_|_|___/\__|____/|_|
+
+                # Coded By Ahmed Aboul-Ela - @aboul3la
+
+[-] Enumerating subdomains now for kali.org
+[-] Searching now in Bing..
+[-] Total Unique Subdomains Found: 19
+www.kali.org
+archive-3.kali.org
+archive-4.kali.org
+archive-5.kali.org
+bugs.kali.org
+cdimage.kali.org
+docs.kali.org
+ar.docs.kali.org
+he.docs.kali.org
+id.docs.kali.org
+tr.docs.kali.org
+forums.kali.org
+git.kali.org
+http.kali.org
+images.kali.org
+pkg.kali.org
+repo.kali.org
+security.kali.org
+tools.kali.org
+```
+
+## Google Dorks
+- Using Google search and its search parameter to gain publicly available informations
+	- `site:{target}`
+	- `inurl:{keyword in the url}`
+	- `intitle:{keyword in title}`
+	- `filetyp:{file format}`
+	- `site:{*.target.com}` : To get the subdomain result of target
+- [WaybackMachine](https://web.archive.org/) : A tool to see the page archives
+- 
