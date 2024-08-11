@@ -111,10 +111,11 @@ How it works:
 - `-O`: OS scanning on target. This scan is not perfectly accurate
 - `-sC`: Default script scan for more detailed scanning
 - `-A`: Aggressive scan which is relevant to -sV -O and -sC
-- `-T`: Adjust scan speed
+- `-T`: Adjust scan speed. The faster it become , the more package it will send to the target thus prone to be detected by target system.
 	- 0 : Paranoid
-	- 1: 
-	- 2
-	- 3
-	- 4
-	- 5
+	- 1 : Sneaky 
+	- 2 : Polite
+	- 3 : Normal
+	- 4 : Aggressive
+	- 5 : Insane
+- `-oN`: Exports output option. Default is `.txt`
