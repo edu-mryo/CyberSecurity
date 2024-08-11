@@ -91,4 +91,5 @@ How it works:
 9) Write to domain_ips.txt file ip-blocks.
 ```
 
+## Host Discovery Using Nmap
 
