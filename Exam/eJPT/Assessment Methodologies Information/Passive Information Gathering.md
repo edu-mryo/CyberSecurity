@@ -1,6 +1,20 @@
+- [Website recon and footprinting](#website-recon-and-footprinting)
+	- [robots.txt](#robotstxt)
+	- [sitemap.xml](#sitemapxml)
+	- [Browser extensions](#browser-extensions)
+- [whois enumeration](#whois-enumeration)
+- [netcraft](#netcraft)
+- [DNS recon](#dns-recon)
+- [WAF with wafw00f](#waf-with-wafw00f)
+- [Subdomain enumeration with sublist3r](#subdomain-enumeration-with-sublist3r)
+- [Google Dorks](#google-dorks)
+- [Email Harvesting with theHarvester](#email-harvesting-with-theharvester)
+- [Leaked Password Database](#leaked-password-database)
+
+
 **What is Passive Info gathering** : To gather information without actively interacting with the target.
 
-### Command
+##  Website recon and footprinting
 - `host`: to get IP information
 
 ```bash
@@ -103,7 +117,7 @@ root@kali:~#
 	- Frontend / Backend stack 
 	- What CMS the target is using
 
-### whois
+## whois enumeration
 - To acquire registry information
 
 ```bash
@@ -233,7 +247,7 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 ```
 
 - [who.is]( https://who.is/) is another website you can use for insights, but might not be as accurate as `whois` command.
-### netcraft
+## netcraft
 - A website tool you can use that is similar to whois but more detailed
 	- eg : https://sitereport.netcraft.com/?url=http://google.com
 - `whois` gives you the **who** behind the website and `netcraft` is more on **what**
@@ -361,4 +375,4 @@ root@kali:~# theHarvester -d kali.org -l 500 -b duckduckgo
 ```
 
 ## Leaked Password Database
-- [haveibeenpwnd](https://haveibeenpwned.com/)
+- [haveibeenpwnd](https://haveibeenpwned.com/): A website where you can use to check if specific email / phone number has been pwned ( leaked ) due to hacking activity or system vulnerability.
