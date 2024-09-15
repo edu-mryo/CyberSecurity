@@ -1,13 +1,12 @@
-# Machine Name: [Machine Name from the CTF Platform]
-**Platform:** [Hack The Box, Try Hack Me, etc.]
-**Difficulty:** [Easy, Medium, Hard]
-**OS:** [Linux, Windows, etc.]
+![](../Attachments/Pasted%20image%2020240916000429.png)
+# Machine Name: Lame
+**Platform:** Hack The Box, 
+**Difficulty:** Easy
+**OS:** Linux
 
 ## Introduction
 
-* Brief description of the machine and its overall theme.
-* Mention your initial thoughts and approach to the challenge.
-
+* Lame is an easy Linux machine, requiring only one exploit to obtain root access. It was the first machine published on Hack The Box and was often the first machine for new users prior to its retirement.
 ## Recon
 
 * **Nmap Scan:**
