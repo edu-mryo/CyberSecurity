@@ -50,7 +50,7 @@ Key findings:
 
 Accessing `http://pennyworth.htb:8080` ( I added target IP in `/etc/hosts`) led me to a login page for `Jenkins`
 
-![](assets/jenkings_login.png)
+![](../Pennyworth/assets/jenkings_login.png)
 
 Jenkins seems to be an [open-soucred CI/CD](https://www.jenkins.io/) ? I could not find any information on default credential for this product. Given the limited intel, I'm assuming the credential is something basic such as
 - `root:password`
@@ -61,7 +61,7 @@ Turns out `root:password` was the correct combination.
 
 Now, Jenkins is a CI/CD tool, so it's likely that there is a way to upload a script to the tool and somehow get shell. A some research led me to [this website](https://blog.pentesteracademy.com/abusing-jenkins-groovy-script-console-to-get-shell-98b951fa64a6), which has detailed steps on getting shell using the script console.
 
-![](assets/jenkins_script_console.png)
+![](../Pennyworth/assets/jenkins_script_console.png)
 
 ## Getting Shell
 
