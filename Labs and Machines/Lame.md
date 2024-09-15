@@ -11,7 +11,7 @@
 
 * **Nmap Scan:**
 `nmap target.htb -Pn -sCV -T4 -oX ~/Desktop/lame.txt`
-	- Exported the tdata 
+	- Exported the data to lame.txt
 
 ```bash
 # Nmap 7.94SVN scan initiated Mon Sep 16 00:17:31 2024 as: nmap -T4 -Pn -sVC -oN /home/markryo/Desktop/lame.txt target.htb
