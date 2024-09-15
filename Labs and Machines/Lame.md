@@ -11,7 +11,8 @@
 
 * **Nmap Scan:**
 `nmap target.htb -Pn -sCV -T4 -oX ~/Desktop/lame.txt`
-	- Exported the data to lame.txt
+
+ I exported the data to lame.txt for better viewability (It is better to output into one place rather than nmapping repeatedly).
 
 ```bash
 # Nmap 7.94SVN scan initiated Mon Sep 16 00:17:31 2024 as: nmap -T4 -Pn -sVC -oN /home/markryo/Desktop/lame.txt target.htb
@@ -62,9 +63,10 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ```
 
-* **Directory Enumeration (if applicable):**
-    * Tools used (Gobuster, Dirbuster, etc.)
-    * Interesting directories or files discovered.
+Looking into the result I noticed two things
+1. They have FTP ( Port : 22 ) open with *allow anonymous login*  . This means I can access their FTP without obtaining credentials and use **username: anonymous password: anonymous**
+2. 
+
 * **Other Recon Tools (if applicable):**
     * Mention any additional recon techniques or tools used.
 
