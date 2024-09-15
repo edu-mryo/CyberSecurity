@@ -1,4 +1,4 @@
-![](../Attachments/Pasted%20image%2020240916000429.png)
+![](../Pasted%20image%2020240916000429.png)
 # Machine Name: Lame
 **Platform:** Hack The Box, 
 **Difficulty:** Easy
@@ -10,10 +10,58 @@
 ## Recon
 
 * **Nmap Scan:**
-    * ```
-      [Include the full Nmap scan results with relevant flags]
-      ```
-    * Analyze the open ports and services.
+`nmap target.htb -Pn -sCV -T4 -oX ~/Desktop/lame.txt`
+	- Exported the tdata 
+
+```bash
+# Nmap 7.94SVN scan initiated Mon Sep 16 00:17:31 2024 as: nmap -T4 -Pn -sVC -oN /home/markryo/Desktop/lame.txt target.htb
+Nmap scan report for target.htb (10.129.232.110)
+Host is up (0.19s latency).
+Not shown: 996 filtered tcp ports (no-response)
+PORT    STATE SERVICE     VERSION
+21/tcp  open  ftp         vsftpd 2.3.4
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 10.10.14.2
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      vsFTPd 2.3.4 - secure, fast, stable
+|_End of status
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+22/tcp  open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 60:0f:cf:e1:c0:5f:6a:74:d6:90:24:fa:c4:d5:6c:cd (DSA)
+|_  2048 56:56:24:0f:21:1d:de:a7:2b:ae:61:b1:24:3d:e8:f3 (RSA)
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_smb2-time: Protocol negotiation failed (SMB2)
+|_clock-skew: mean: 2h00m45s, deviation: 2h49m56s, median: 35s
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.20-Debian)
+|   Computer name: lame
+|   NetBIOS computer name: 
+|   Domain name: hackthebox.gr
+|   FQDN: lame.hackthebox.gr
+|_  System time: 2024-09-15T11:18:50-04:00
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 16 00:18:47 2024 -- 1 IP address (1 host up) scanned in 76.13 seconds
+
+```
+
 * **Directory Enumeration (if applicable):**
     * Tools used (Gobuster, Dirbuster, etc.)
     * Interesting directories or files discovered.
