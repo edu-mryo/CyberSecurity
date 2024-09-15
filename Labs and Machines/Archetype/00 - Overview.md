@@ -1,7 +1,7 @@
 
 # Archetyp Overview
 
-![](assets/Pasted%20image%2020240629224537.png)
+![](../assets/Pasted%20image%2020240629224537.png)
 
 Machine Details:
 

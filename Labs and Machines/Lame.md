@@ -1,4 +1,4 @@
-![](../Pasted%20image%2020240916000429.png)
+![](assets/Pasted%20image%2020240916000429.png)
 # Machine Name: Lame
 **Platform:** Hack The Box, 
 **Difficulty:** Easy
