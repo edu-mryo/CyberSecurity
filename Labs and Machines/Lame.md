@@ -1,6 +1,6 @@
 ![](assets/Pasted%20image%2020240916000429.png)
 # Machine Name: Lame
-**Platform:** Hack The Box, 
+**Platform:** Hack The Box
 **Difficulty:** Easy
 **OS:** Linux
 
@@ -63,21 +63,79 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ```
 
-Looking into the result I noticed two things
-1. They have FTP ( Port : 22 ) open with *allow anonymous login*  . This means I can access their FTP without obtaining credentials and use **username: anonymous password: anonymous**
-2. 
-
-* **Other Recon Tools (if applicable):**
-    * Mention any additional recon techniques or tools used.
-
 ## Vulnerability Identification
 
-* **Vulnerability 1:**
-    * Describe the identified vulnerability in detail.
-    * ![Screenshot or PoC]
-    * Explain the exploitation process.
-* **Vulnerability 2 (if any):**
-    * Repeat the same format for any additional vulnerabilities.
+ Looking into recon I noticed two things.
+1. They have FTP ( Port : 22 ) open with *allow anonymous login*  . This means I can access their FTP without obtaining credentials and use **username: anonymous password: anonymous**. Anonymous login was successful, but nothing valuable was salvageable.   
+
+```bash
+$ ftp target.htb                                                                      
+Connected to target.htb.
+220 (vsFTPd 2.3.4)
+Name (target.htb:kali): anonymous
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+229 Entering Extended Passive Mode (|||23849|).
+150 Here comes the directory listing.
+226 Directory send OK.
+ftp> pwd
+Remote directory: /
+ftp> cd
+(remote-directory) ls
+550 Failed to change directory.
+ftp> cd ../
+250 Directory successfully changed.
+ftp> ls
+229 Entering Extended Passive Mode (|||19635|).
+150 Here comes the directory listing.
+226 Directory send OK.
+ftp> 
+```
+
+2. They also have an open `Samba smbd 3.0.20-Debian` in port 445
+	- What is Samba ? [Here is the official doc](https://www.samba.org/samba/what_is_samba.html). It's a software that allows Unix-like OS to communicate with SMB 
+	- I initially tried `smbclient` to see if there is anything worth to deepdive. I found a `sharename` called `tmp` with `oh noes!` comment, which looked suspicious.
+
+```bash
+$ smbclient -L target.htb      
+Password for [WORKGROUP\kali]:
+Anonymous login successful
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        print$          Disk      Printer Drivers
+        tmp             Disk      oh noes!
+        opt             Disk      
+        IPC$            IPC       IPC Service (lame server (Samba 3.0.20-Debian))
+        ADMIN$          IPC       IPC Service (lame server (Samba 3.0.20-Debian))
+Reconnecting with SMB1 for workgroup listing.
+Anonymous login successful
+
+        Server               Comment
+$ smbclient \\\\target.htb\\tmp
+Password for [WORKGROUP\kali]:
+Anonymous login successful
+Try "help" to get a list of possible commands.
+smb: \> ls
+  .                                   D        0  Mon Sep 16 10:40:25 2024
+  ..                                 DR        0  Sat Oct 31 15:33:58 2020
+  .ICE-unix                          DH        0  Mon Sep 16 00:07:39 2024
+  vmware-root                        DR        0  Mon Sep 16 00:08:02 2024
+  .X11-unix                          DH        0  Mon Sep 16 00:08:04 2024
+  .X0-lock                           HR       11  Mon Sep 16 00:08:04 2024
+  5640.jsvc_up                        R        0  Mon Sep 16 00:08:50 2024
+  vgauthsvclog.txt.0                  R     1600  Mon Sep 16 00:07:38 2024
+
+        ---------            -------
+
+        Workgroup            Master
+        ---------            -------
+        WORKGROUP            LAME
+```
 
 ## Exploitation
 
