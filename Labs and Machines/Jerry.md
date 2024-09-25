@@ -44,9 +44,12 @@ Essentially, Tomcat acts as an intermediary between web clients and your Java we
 Think of it as a lightweight, Java-centric alternative to full-fledged application servers like JBoss or WebLogic. It's perfect for deploying and running moderately complex web applications without the overhead of a full-blown JEE server.
 ```
 
-* **Directory Enumeration (if applicable):**
-    * Tools used (Gobuster, Dirbuster, etc.)
-    * Interesting directories or files discovered.
+* **Directory Enumeration (if applicable):** `ffuf -w /usr/share/wordlists/rockyou.txt:8080 -u http://jerry.htb:8080/FUZZ`
+    - Tried the directory enum and got `/manager` which looks to be fishy.
+    - I also found weird diretctories such as`#1baby` but I ignored this for now . It redirected to the top page anyways.
+
+
+
 * **Other Recon Tools (if applicable):**
     * Mention any additional recon techniques or tools used.
 
@@ -89,13 +92,6 @@ PORT     STATE SERVICE
 
 From what i see here, the server is possibly vulnerable with [CVE-2007-6750](https://access.redhat.com/security/cve/cve-2007-6750) . This CVE however seems to be about attacking the server using DDoS. Ill keep this for a note.
 
-
-
-
-
-    * Describe the identified vulnerability in detail.
-    * ![Screenshot or PoC]
-    * Explain the exploitation process.
 * **Vulnerability 2 (if any):**
     * Repeat the same format for any additional vulnerabilities.
 
