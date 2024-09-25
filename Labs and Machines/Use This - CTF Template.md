@@ -1,3 +1,4 @@
+
 # Machine Name: [Machine Name from the CTF Platform]
 **Platform:** [Hack The Box, Try Hack Me, etc.]
 **Difficulty:** [Easy, Medium, Hard]

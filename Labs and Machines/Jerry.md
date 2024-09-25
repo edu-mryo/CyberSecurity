@@ -1,3 +1,4 @@
+![[Pasted image 20240926073515.png]]
 # Machine Name: Jerry
 **Platform:** Hack The Box
 **Difficulty:** [Easy, Medium, Hard]
