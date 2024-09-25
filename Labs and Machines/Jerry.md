@@ -45,6 +45,15 @@ Essentially, Tomcat acts as an intermediary between web clients and your Java we
 Think of it as a lightweight, Java-centric alternative to full-fledged application servers like JBoss or WebLogic. It's perfect for deploying and running moderately complex web applications without the overhead of a full-blown JEE server.
 ```
 
+* **Directory Enumeration (if applicable):**
+    * Tools used (Gobuster, Dirbuster, etc.)
+    * Interesting directories or files discovered.
+* **Other Recon Tools (if applicable):**
+    * Mention any additional recon techniques or tools used.
+
+## Vulnerability Identification
+
+* **Vulnerability 1:** nmap vuln scan
 I also tried the vulnerability scan using nmap: `nmap --script vuln jerry.htb`
 
 ```bash
@@ -66,7 +75,7 @@ PORT     STATE SERVICE
 |       Slowloris tries to keep many connections to the target web server open and hold
 |       them open as long as possible.  It accomplishes this by opening connections to
 |       the target web server and sending a partial request. By doing so, it starves
-|       the http server's resources causing Denial Of Service.
+|       the http server\'s resources causing Denial Of Service.
 |       
 |     Disclosure date: 2009-09-17
 |     References:
@@ -77,18 +86,13 @@ PORT     STATE SERVICE
 |   /manager/html/upload: Apache Tomcat (401 Unauthorized)
 |_  /manager/html: Apache Tomcat (401 Unauthorized)
 
-
 ```
 
-* **Directory Enumeration (if applicable):**
-    * Tools used (Gobuster, Dirbuster, etc.)
-    * Interesting directories or files discovered.
-* **Other Recon Tools (if applicable):**
-    * Mention any additional recon techniques or tools used.
+From what i see here, the server is possibly vulnerable with [CVE-2007-6750](https://access.redhat.com/security/cve/cve-2007-6750) . This CVE however seems to be about attacking the server using DDoS. Ill keep this for a note.
 
-## Vulnerability Identification
 
-* **Vulnerability 1:**
+
+
     * Describe the identified vulnerability in detail.
     * ![Screenshot or PoC]
     * Explain the exploitation process.
