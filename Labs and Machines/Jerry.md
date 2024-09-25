@@ -6,8 +6,7 @@
 
 ## Introduction
 
-* Brief description of the machine and its overall theme.
-* Mention your initial thoughts and approach to the challenge.
+Although Jerry is one of the easier machines on Hack The Box, it is realistic as Apache Tomcat is often found exposed and configured with common or weak credentials.
 
 ## Recon
 
@@ -89,6 +88,7 @@ PORT     STATE SERVICE
 ```
 
 From what i see here, the server is possibly vulnerable with [CVE-2007-6750](https://access.redhat.com/security/cve/cve-2007-6750) . This CVE however seems to be about attacking the server using DDoS. Ill keep this for a note.
+
 
 
 
