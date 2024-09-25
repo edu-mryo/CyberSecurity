@@ -1,5 +1,5 @@
-# Machine Name: [Machine Name from the CTF Platform]
-**Platform:** [Hack The Box, Try Hack Me, etc.]
+# Machine Name: Jerry
+**Platform:** Hack The Box
 **Difficulty:** [Easy, Medium, Hard]
 **OS:** [Linux, Windows, etc.]
 
@@ -10,9 +10,8 @@
 
 ## Recon
 
-* **Nmap Scan:** `add nmap command here`
-```bash
-```
+* **Nmap Scan:**
+    * 
 * **Directory Enumeration (if applicable):**
     * Tools used (Gobuster, Dirbuster, etc.)
     * Interesting directories or files discovered.
