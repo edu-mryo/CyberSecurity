@@ -11,10 +11,8 @@
 ## Recon
 
 * **Nmap Scan:**
-    * ```
-      [Include the full Nmap scan results with relevant flags]
-      ```
-    * Analyze the open ports and services.
+    * [Include the full Nmap scan results with relevant flags]
+l
 * **Directory Enumeration (if applicable):**
     * Tools used (Gobuster, Dirbuster, etc.)
     * Interesting directories or files discovered.
