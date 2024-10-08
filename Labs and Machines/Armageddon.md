@@ -114,7 +114,7 @@ The website looked simple. I tried the basic default credentials, but that did n
 
 Looking through the `vuln` script, I found some files related to Drupal, which is the name of the CMS. The CHANEGLOG.txt specifically had interesting information.
 
-![](../Pasted%20image%2020241003222940.png)
+![](assets/Pasted%20image%2020241003222940.png)
 
 The basic Nmap recon did not give me the Drupal version, but this changelog seems to show  the version is `7.56`. This is good enough to use `searchsploit` or `metsploit`
 

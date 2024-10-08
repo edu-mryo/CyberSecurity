@@ -1,8 +1,8 @@
-
-# Machine Name: [Machine Name from the CTF Platform]
-**Platform:** [Hack The Box, Try Hack Me, etc.]
-**Difficulty:** [Easy, Medium, Hard]
-**OS:** [Linux, Windows, etc.]
+![](assets/Pasted%20image%2020241008230035.png)
+# Machine Name: Caving
+**Platform:** Hack The Box,
+**Difficulty:** Very Easy
+**OS:** Linux
 
 ## Introduction
 
@@ -11,6 +11,7 @@
 
 ## Recon
 
+<<<<<<< HEAD
 * **Nmap Scan:**
     * [Include the full Nmap scan results with relevant flags]
 l
