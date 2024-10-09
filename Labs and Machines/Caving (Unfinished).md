@@ -4,6 +4,7 @@
 **Difficulty:** Very Easy
 **OS:** Linux
 
+**UNFINISHED DUE TO MACHINE ISSUE**
 ## Introduction
 
 Caving is an Easy Linux machine that showcases an account takeover vulnerability ([CVE-2023-32707](https://nvd.nist.gov/vuln/detail/CVE-2023-32707)) in `Splunk`. A vulnerable Splunk server can be exploited by a low-privileged user with the `edit_user` permission. As a result a low-privileged user can escalate their privileges to administrator account. Having administrator privileges it is possible to create an app which can result in executing commands on the server.lenge.
