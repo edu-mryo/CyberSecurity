@@ -10,8 +10,35 @@ Caving is an Easy Linux machine that showcases an account takeover vulnerability
 
 ## Recon
 
-* **Nmap Scan:** `add nmap command here`
+* **Nmap Scan:** `└──╼ [★]$ nmap caving.htb -T4 -Pn -sVC -oN ~/Desktop/caving.txt`
+
 ```bash
+# Nmap 7.94SVN scan initiated Tue Oct  8 20:35:36 2024 as: nmap -T4 -Pn -sVC -oN /home/pochify/Desktop/caving.txt caving.htb
+Nmap scan report for caving.htb (10.129.230.97)
+Host is up (0.068s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+|_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+8000/tcp open  http     Splunkd httpd
+| http-robots.txt: 1 disallowed entry 
+|_/
+| http-title: Site doesn\'t have a title (text/html; charset=UTF-8).
+|_Requested resource was http://caving.htb:8000/en-US/account/login?return_to=%2Fen-US%2F
+|_http-server-header: Splunkd
+8089/tcp open  ssl/http Splunkd httpd
+| ssl-cert: Subject: commonName=SplunkServerDefaultCert/organizationName=SplunkUser
+| Not valid before: 2023-11-14T14:45:02
+|_Not valid after:  2026-11-13T14:45:02
+|_http-title: splunkd
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Splunkd
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
 ```
 
 * **Directory Enumeration (if applicable):**
