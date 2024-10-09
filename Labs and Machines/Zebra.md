@@ -1,8 +1,9 @@
--
-# Machine Name: [Machine Name from the CTF Platform]
-**Platform:** [Hack The Box, Try Hack Me, etc.]
-**Difficulty:** [Very Easy, Easy, Medium, Hard]
+![](assets/Pasted%20image%2020241009223750.png)
+# Machine Name: Zebra
+**Platform:** Hack The Box
+**Difficulty:** Very Easy
 **OS:** [Linux, Windows, etc.]
+
 
 ## Introduction
 
