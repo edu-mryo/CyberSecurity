@@ -41,6 +41,12 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ```
 
+The machine seems to have active ports in `8000` and `8089` and they are Splunk.
+- What is Splunk ? : Seems to be a log collecting platform.
+	- [Japanese article](https://qiita.com/frozencatpisces/items/59703f57ce88ec936255)
+	- [Official website](https://www.splunk.com/en_us/blog/learn/what-splunk-does.html)
+
+
 * **Directory Enumeration (if applicable):**
     * Tools used (Gobuster, Dirbuster, etc.)
     * Interesting directories or files discovered.
