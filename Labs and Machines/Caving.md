@@ -47,6 +47,7 @@ The machine seems to have active ports in `8000` and `8089` and they are Splunk.
 	- [Official website](https://www.splunk.com/en_us/blog/learn/what-splunk-does.html)
 
 
+
 * **Directory Enumeration (if applicable):**
     * Tools used (Gobuster, Dirbuster, etc.)
     * Interesting directories or files discovered.
@@ -55,7 +56,34 @@ The machine seems to have active ports in `8000` and `8089` and they are Splunk.
 
 ## Vulnerability Identification
 
-* **Vulnerability 1:**
+* **Vulnerability 1:** vuln scan `nmap caving.htb --script vuln` 
+
+```bash
+
+PORT     STATE SERVICE
+22/tcp   open  ssh
+8000/tcp open  http-alt
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server\'s resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+| http-enum: 
+|_  /robots.txt: Robots file
+8089/tcp open  unknown
+
+```
+
+
     * Describe the identified vulnerability in detail.
     * ![Screenshot or PoC]
     * Explain the exploitation process.
