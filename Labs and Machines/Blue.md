@@ -55,12 +55,40 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 150.58 seconds
 ```
 
-* **Directory Enumeration (if applicable):**
-    * Tools used (Gobuster, Dirbuster, etc.)
-    * Interesting directories or files discovered.
-* **Other Recon Tools (if applicable):**
-    * Mention any additional recon techniques or tools used.
+From what I see, the machine is a Windows machine with SMB open. 
+Doing `smbclient  -L //blue.htb/` gave me below data.
 
+```bash
+Password for [WORKGROUP\kali]:
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        IPC$            IPC       Remote IPC
+        Share           Disk      
+        Users           Disk      
+Reconnecting with SMB1 for workgroup listing.
+cd do_connect: Connection to blue.htb failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+```
+
+`Users` looks interesting, but i could not find anything useful
+`smbclient  //blue.htb/Users`
+
+```bash
+
+smb: \> ls
+  .                                  DR        0  Fri Jul 21 15:56:23 2017
+  ..                                 DR        0  Fri Jul 21 15:56:23 2017
+  Default                           DHR        0  Tue Jul 14 16:07:31 2009
+  desktop.ini                       AHS      174  Tue Jul 14 13:54:24 2009
+  Public                             DR        0  Tue Apr 12 16:51:29 2011
+
+                4692735 blocks of size 4096. 592683 blocks available
+smb: \> exit
+
+```
 ## Vulnerability Identification
 
 * **Vulnerability 1:** vuln scan
@@ -85,6 +113,10 @@ Host script results:
 |_smb-vuln-ms10-054: false
 
 ```
+
+The vulnerability scan shows that the machine is vulnerable to `CVE-2017-0143`
+- [NVD](https://nvd.nist.gov/vuln/detail/CVE-2017-0143)
+	
 
 * **Vulnerability 2 (if any):**
     * Repeat the same format for any additional vulnerabilities.
