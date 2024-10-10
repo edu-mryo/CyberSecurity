@@ -251,11 +251,10 @@ After gaining access to the machine from the eternalblue module, I looked throug
 Under `User`, I found `haris` and i found the `user.txt` under his desktop. I found the `root.txt` under `Administrator`'s `desktop`
 ## Lessons Learned
 
-- The recon to get info
+- The recon to get information and understand the correct vulnerability
+- I should have read the CVE more closely. 
 ## Conclusion
 
-* Summarize your overall experience with the machine.
-* Highlight the challenges you faced and how you overcame them.
-* Offer any advice to others attempting the same machine.
+- Super easy machine as long as you know what tool to use. 
 
 **Happy hacking!**
