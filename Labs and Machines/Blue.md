@@ -6,11 +6,12 @@
 
 ## Introduction
 
-Blue, while possibly the most simple machine on Hack The Box, demonstrates the severity of the EternalBlue exploit, which has been used in multiple large-scale ransomware and crypto-mining attacks since it was leaked publicly.lenge.
+Blue, while possibly the most simple machine on Hack The Box, demonstrates the severity of the EternalBlue exploit, which has been used in multiple large-scale ransomware and crypto-mining attacks since it was leaked publicly.
 
 ## Recon
 
 * **Nmap Scan:** `add nmap command here`
+
 ```bash
 ```
 
