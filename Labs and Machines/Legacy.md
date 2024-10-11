@@ -69,7 +69,8 @@ Host script results:
 |   VULNERABLE:
 |   Microsoft Windows system vulnerable to remote code execution (MS08-067)
 |     State: VULNERABLE
-|     IDs:  CVE:
+|     IDs:  CVE:ls
+
 |           The Server service in Microsoft Windows 2000 SP4, XP SP2 and SP3, Server 2003 SP1 and SP2,
 |           Vista Gold and SP1, Server 2008, and 7 Pre-Beta allows remote attackers to execute arbitrary
 |           code via a crafted RPC request that triggers the overflow during path canonicalization.
