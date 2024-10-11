@@ -43,12 +43,12 @@
 * **Proof of Access:**
     * ![Screenshot of flags or other evidence]
 
-## Post-Exploitation
+## Guided Mode (if any)
 
-* **Further Enumeration:**
-    * Any additional information gathered after gaining access (interesting files, configurations, etc.).
-* **Lateral Movement (if applicable):**
-    * Explain how you moved to other machines on the network (if any).
+1. bar
+2. foo
+3. bar
+4. foo
 
 ## Lessons Learned
 

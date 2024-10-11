@@ -136,19 +136,36 @@ msf6 exploit(windows/smb/ms08_067_netapi) > exploit
 
 ```
 
+searching for `user.txt`...
 
-## Post-Exploitation
+```bash
 
-* **Further Enumeration:**
-    * Any additional information gathered after gaining access (interesting files, configurations, etc.).
-* **Lateral Movement (if applicable):**
-    * Explain how you moved to other machines on the network (if any).
+meterpreter > search -f user.txt
+Found 1 result...
+=================
 
+Path                                             Size (bytes)  Modified (UTC)
+----                                             ------------  --------------
+c:\Documents and Settings\john\Desktop\user.txt  32            2017-03-16 15:19:49 +0900
+```
+
+That was pretty straight forward. The file was accessible and also `root.txt` was in the `Administrator/Desktop` which is also under `Documents and Settings` directory.
+## Guided Mode ( if any )
+
+1. How many TCP ports are open on Legacy? : `3`
+	1. Simple Nmap will give me the result
+2. What is the 2008 CVE ID for a vulnerability in SMB that allows for remote code execution? : `CVE-2008-4250`
+	1. --script vuln result had this 
+3. What is the name of the Metasploit module that exploits CVE-2008-4250? : `ms08_067_netapi`
+	1. msfconsole search using the CVE ID
+4. When exploiting MS08-067, what user does execution run as? Include the information before and after : `NT AUTHORITY\SYSTEM`
+	1. Just check the user after access
+5. In addition to MS08-067, Legacy's SMB service is also vulnerable to another remote code execution vulnerability with a CVE ID from 2017. What is that ID? : `CVE-2017-0143`
+	1. Vuln scan result had this 
 ## Lessons Learned
 
-* Key takeaways from the challenge.
-* What you learned about the specific vulnerabilities or techniques used.
-* Any areas where you could have improved your approach.
+- Vuln scan is a friend. Try to check this for CVE info
+- 
 
 ## Conclusion
 
