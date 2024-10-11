@@ -37,11 +37,7 @@ Host script results:
 
 ```
 
-* **Directory Enumeration (if applicable):**
-    * Tools used (Gobuster, Dirbuster, etc.)
-    * Interesting directories or files discovered.
-* **Other Recon Tools (if applicable):**
-    * Mention any additional recon techniques or tools used.
+The machine seems to have an open SMB  at port 445. No http open, so I'm assuming this is where we should be digging 
 
 ## Vulnerability Identification
 
@@ -100,12 +96,7 @@ Host script results:
 Nmap done: 1 IP address (1 host up) scanned in 68.34 seconds
 ```
 
-    * Describe the identified vulnerability in detail.
-    * ![Screenshot or PoC]
-    * Explain the exploitation process.
-* **Vulnerability 2 (if any):**
-    * Repeat the same format for any additional vulnerabilities.
-
+The vuln scan gave me 
 ## Exploitation
 
 * **Gaining Initial Access:**
